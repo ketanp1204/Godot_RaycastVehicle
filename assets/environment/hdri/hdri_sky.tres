@@ -1,0 +1,6 @@
+[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3 uid="uid://ddrtpyhxds7ow"]
+
+[ext_resource type="Texture2D" uid="uid://b06wlb5038smp" path="res://assets/environment/hdri/kiara_3_morning_4k.exr" id="1_2tttk"]
+
+[resource]
+panorama = ExtResource("1_2tttk")

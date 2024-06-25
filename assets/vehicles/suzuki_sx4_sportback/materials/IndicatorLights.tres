@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://sivcretx0psk"]
+
+[resource]
+resource_name = "IndicatorLights"
+cull_mode = 2
+albedo_color = Color(0.728872, 0.48365, 0, 1)
+metallic = 0.685039
+roughness = 0.492126

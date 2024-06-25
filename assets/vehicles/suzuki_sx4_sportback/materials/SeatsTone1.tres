@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b867u3hwuca6a"]
+
+[resource]
+resource_name = "SeatsTone1"
+cull_mode = 2
+albedo_color = Color(0.918352, 0.918245, 0.918245, 1)
+roughness = 0.5

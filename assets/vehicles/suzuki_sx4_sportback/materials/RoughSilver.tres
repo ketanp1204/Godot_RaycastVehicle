@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://p8puy1fwoc8j"]
+
+[resource]
+resource_name = "RoughSilver"
+cull_mode = 2
+albedo_color = Color(0.960738, 0.964438, 0.96628, 1)
+metallic = 1.0
+roughness = 0.69685

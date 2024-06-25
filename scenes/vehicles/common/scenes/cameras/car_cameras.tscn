@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx5tiyarhaal4"]
+
+[ext_resource type="Script" path="res://scenes/vehicles/common/scenes/cameras/car_cameras.gd" id="1_js4x6"]
+
+[node name="Car_Cameras" type="Node3D" node_paths=PackedStringArray("cameras", "default_camera")]
+script = ExtResource("1_js4x6")
+cameras = [NodePath("SpringArm_Internal/Camera_Internal"), NodePath("SpringArm_Chasing/Camera_Chasing")]
+spring_arm_default_rotations = Array[Vector3]([Vector3(0, -90, 0), Vector3(-10, -90, 0)])
+default_camera = NodePath("SpringArm_Chasing/Camera_Chasing")
+
+[node name="SpringArm_Chasing" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23505, 0)
+spring_length = 3.5
+
+[node name="Camera_Chasing" type="Camera3D" parent="SpringArm_Chasing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+current = true
+
+[node name="SpringArm_Internal" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117258, 1.31858, -0.361722)
+spring_length = 0.1
+
+[node name="Camera_Internal" type="Camera3D" parent="SpringArm_Internal"]

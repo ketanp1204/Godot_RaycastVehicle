@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dakcks2j7d8va"]
+
+[ext_resource type="Material" uid="uid://ddrtpyhxds7ow" path="res://assets/environment/hdri/hdri_sky.tres" id="1_532cw"]
+
+[sub_resource type="Sky" id="Sky_xx113"]
+sky_material = ExtResource("1_532cw")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_xx113")
+tonemap_mode = 3
+glow_enabled = true
+glow_intensity = 0.03
+glow_strength = 0.38
