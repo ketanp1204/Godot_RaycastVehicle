@@ -6,7 +6,7 @@ enum DOOR_LOCATION { FRONT_LEFT, FRONT_RIGHT, REAR_LEFT, REAR_RIGHT }
 
 
 @export_group("Mesh")
-@export var door_mesh: Resource
+@export var door_mesh_resource: Resource
 
 @export_group("Door Params")
 @export var door_location: DOOR_LOCATION
@@ -19,7 +19,7 @@ enum DOOR_LOCATION { FRONT_LEFT, FRONT_RIGHT, REAR_LEFT, REAR_RIGHT }
 @export var rotation_axis: ROTATION_AXIS
 
 
-@onready var mesh_instance = $MeshInstance3D
+@onready var door_mesh = $DoorMesh
 @onready var external_handle = $ExternalHandle
 
 
@@ -28,8 +28,13 @@ var state: INTERACT_STATE
 
 
 func _ready() -> void:
-	# Set the mesh of the MeshInstance3D
-	mesh_instance.mesh = door_mesh
+	# Set the mesh of the MeshInstance3D if not set
+	if door_mesh.mesh == null:
+		if door_mesh_resource == null:
+			print("ERROR @ Node " + name + ": Door mesh not set in the inspector")
+			return
+		else:
+			door_mesh.mesh = door_mesh_resource
 	
 	# Set the default interaction state
 	state = INTERACT_STATE.CLOSED

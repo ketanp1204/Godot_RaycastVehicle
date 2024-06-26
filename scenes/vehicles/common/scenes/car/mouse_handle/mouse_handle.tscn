@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwhrwf2tqh136"]
 
-[ext_resource type="Script" path="res://scenes/vehicles/common/scenes/mouse_handle/mouse_handle.gd" id="1_7hlgf"]
+[ext_resource type="Script" path="res://scenes/vehicles/common/scenes/car/mouse_handle/mouse_handle.gd" id="1_7hlgf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l4gwh"]
 size = Vector3(0.136719, 0.142822, 0.136719)

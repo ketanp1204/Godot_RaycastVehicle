@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://rp712ic5ra7n"]
+
+[ext_resource type="Script" path="res://scenes/vehicles/common/scenes/car/car_wheel/car_wheel.gd" id="1_wb3pc"]
+
+[node name="CarWheel" type="Node3D"]
+script = ExtResource("1_wb3pc")
+spring_stiffness = 6000.0
+damper_stiffness = 300.0
+
+[node name="WheelMesh" type="MeshInstance3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://dakcks2j7d8va" path="res://assets/environment/default_env.tres" id="1_kk42m"]
 [ext_resource type="Material" uid="uid://t46yamirynhg" path="res://assets/materials/asphalt_mat.tres" id="2_y2tle"]
-[ext_resource type="PackedScene" uid="uid://oqcg4quhn0ic" path="res://scenes/vehicles/suzuki_sx4_sportback/scenes/main/sx4_main.tscn" id="3_m3uon"]
+[ext_resource type="PackedScene" uid="uid://rkuna7geh5u1" path="res://scenes/vehicles/common/scenes/car/car_main/car_main.tscn" id="3_a223t"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rrqrx"]
 size = Vector2(10000, 10000)
@@ -30,5 +30,5 @@ mesh = SubResource("PlaneMesh_rrqrx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AsphaltGround/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xrejn")
 
-[node name="sx4_sportback" parent="." instance=ExtResource("3_m3uon")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34864, 0)
+[node name="Car" parent="." instance=ExtResource("3_a223t")]
+transform = Transform3D(1, 0, 0, 0, 0.999469, 0.0325795, 0, -0.0325795, 0.999469, 0.476781, 1.63454, -0.299908)
