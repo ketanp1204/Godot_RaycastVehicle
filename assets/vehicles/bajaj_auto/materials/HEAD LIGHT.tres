@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b4d6563jkr5wu"]
+
+[ext_resource type="Texture2D" uid="uid://bs5guouhs5p2" path="res://assets/vehicles/bajaj_auto/Bajaj_Auto_Godot_TexturesCom_Lights0012_M.jpg" id="1_07t3u"]
+
+[resource]
+resource_name = "HEAD LIGHT"
+cull_mode = 2
+albedo_texture = ExtResource("1_07t3u")
+roughness = 0.5
+emission_enabled = true
+emission_texture = ExtResource("1_07t3u")

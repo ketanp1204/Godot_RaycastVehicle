@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cwpdmfru4qdt8"]
+
+[ext_resource type="Texture2D" uid="uid://dafbx2cvya7r4" path="res://assets/vehicles/bajaj_auto/Bajaj_Auto_Godot_TexturesCom_Leather0056_2_M.png" id="1_fpqr8"]
+
+[resource]
+resource_name = "COVER"
+cull_mode = 2
+albedo_texture = ExtResource("1_fpqr8")
+roughness = 0.257647
+normal_enabled = true
+normal_texture = ExtResource("1_fpqr8")

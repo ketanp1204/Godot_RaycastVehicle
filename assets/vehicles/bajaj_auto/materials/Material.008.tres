@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dsy1bhoafy6u3"]
+
+[ext_resource type="Texture2D" uid="uid://fkeqcfwpo7vu" path="res://assets/vehicles/bajaj_auto/Bajaj_Auto_Godot_Screenshot 2023-08-10 at 18.10.png" id="1_i8eov"]
+
+[resource]
+resource_name = "Material.008"
+cull_mode = 2
+albedo_texture = ExtResource("1_i8eov")
+roughness = 0.94
+emission_enabled = true
+emission_texture = ExtResource("1_i8eov")

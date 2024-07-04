@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://yrux64yyqb1y"]
+
+[resource]
+resource_name = "BLACK RUBBER.002"
+cull_mode = 2
+albedo_color = Color(0.0979191, 0.0979191, 0.0979191, 1)
+roughness = 0.864706

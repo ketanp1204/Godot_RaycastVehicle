@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xia1bred1j3"]
+
+[resource]
+resource_name = "Prism Glass with absorbtion.006"
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.0392157)
+metallic = 1.0

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blgsq00ik7rke"]
+
+[resource]
+resource_name = "SCREWS.004"
+cull_mode = 2
+albedo_color = Color(0.929534, 0.929534, 0.929534, 1)
+metallic = 0.249412
+roughness = 0.612941

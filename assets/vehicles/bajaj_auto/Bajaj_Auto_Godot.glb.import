@@ -1,0 +1,245 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cldflrqhce06r"
+path="res://.godot/imported/Bajaj_Auto_Godot.glb-0ab9b2d0178de4862fb6eab8d96ca465.scn"
+
+[deps]
+
+source_file="res://assets/vehicles/bajaj_auto/Bajaj_Auto_Godot.glb"
+dest_files=["res://.godot/imported/Bajaj_Auto_Godot.glb-0ab9b2d0178de4862fb6eab8d96ca465.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"BLACK RUBBER": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/BLACK RUBBER.tres"
+},
+"BLACK RUBBER.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/BLACK RUBBER.002.tres"
+},
+"BLACK RUBBER.004": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/BLACK RUBBER.004.tres"
+},
+"BLACK RUBBER.005": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/BLACK RUBBER.005.tres"
+},
+"BLACK RUBBER.006": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/BLACK RUBBER.006.tres"
+},
+"BLACK RUBBER.007": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/BLACK RUBBER.007.tres"
+},
+"COVER": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/COVER.tres"
+},
+"COVER SEAM": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/COVER SEAM.tres"
+},
+"HEAD LIGHT": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/HEAD LIGHT.tres"
+},
+"LEATHER TRIM": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/LEATHER TRIM.tres"
+},
+"Material": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.tres"
+},
+"Material.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.001.tres"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.002.tres"
+},
+"Material.004": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.004.tres"
+},
+"Material.005": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.005.tres"
+},
+"Material.007": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.007.tres"
+},
+"Material.008": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.008.tres"
+},
+"Material.009": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.009.tres"
+},
+"Material.010": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Material.010.tres"
+},
+"Prism Glass with absorbtion.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Prism Glass with absorbtion.001.tres"
+},
+"Prism Glass with absorbtion.004": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Prism Glass with absorbtion.004.tres"
+},
+"Prism Glass with absorbtion.006": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Prism Glass with absorbtion.006.tres"
+},
+"RED LIGHT": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/RED LIGHT.tres"
+},
+"SCREWS": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SCREWS.tres"
+},
+"SCREWS.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SCREWS.001.tres"
+},
+"SCREWS.002": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SCREWS.002.tres"
+},
+"SCREWS.004": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SCREWS.004.tres"
+},
+"SCREWS.005": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SCREWS.005.tres"
+},
+"SCREWS.006": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SCREWS.006.tres"
+},
+"SCREWS.007": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SCREWS.007.tres"
+},
+"SCREWS.008": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SCREWS.008.tres"
+},
+"SHINY METAL": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/SHINY METAL.tres"
+},
+"Screenshot 2023-08-11 at 11.20.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Screenshot 2023-08-11 at 11.20.001.tres"
+},
+"Screenshot 2023-08-11 at 11.20.58": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/bajaj_auto/materials/Screenshot 2023-08-11 at 11.20.58.tres"
+}
+},
+"meshes": {
+"MAIN_Body": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/bajaj_auto/meshes/MAIN_Body.res"
+},
+"MAIN_FrontWheelFender": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/bajaj_auto/meshes/MAIN_FrontWheelFender.res"
+},
+"MAIN_Steering": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/bajaj_auto/meshes/MAIN_Steering.res"
+},
+"MAIN_Wheel_R": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/bajaj_auto/meshes/MAIN_Wheel_R.res"
+},
+"MAIN_Wheel_R_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/bajaj_auto/meshes/MAIN_Wheel_R_001.res"
+},
+"MAIN_Wheel_R_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/bajaj_auto/meshes/MAIN_Wheel_R_002.res"
+},
+"MAIN_Wiper": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/bajaj_auto/meshes/MAIN_Wiper.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

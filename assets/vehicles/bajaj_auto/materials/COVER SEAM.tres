@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5f8s8557kday"]
+
+[resource]
+resource_name = "COVER SEAM"
+cull_mode = 2
+albedo_color = Color(0.402625, 0.402625, 0.402625, 1)
+roughness = 0.836654

@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://o2t8sxut07kb"
+path.s3tc="res://.godot/imported/Bajaj_Auto_Godot_TexturesCom_Lights0029_1_M.jpg-85fa0ea5a6ecf7a6c7d4e299e1ea5861.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "655e7500aba3e4607912a2ebece76cd8"
+}
+
+[deps]
+
+source_file="res://assets/vehicles/bajaj_auto/Bajaj_Auto_Godot_TexturesCom_Lights0029_1_M.jpg"
+dest_files=["res://.godot/imported/Bajaj_Auto_Godot_TexturesCom_Lights0029_1_M.jpg-85fa0ea5a6ecf7a6c7d4e299e1ea5861.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/vehicles/Bajaj_Auto_Godot_TexturesCom_Lights0029_1_M.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
