@@ -2,7 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://dakcks2j7d8va" path="res://assets/environment/default_env.tres" id="1_kk42m"]
 [ext_resource type="Material" uid="uid://t46yamirynhg" path="res://assets/materials/asphalt_mat.tres" id="2_y2tle"]
-[ext_resource type="PackedScene" uid="uid://it245pak8ben" path="res://scenes/vehicles/common/vehicle_three_wheeled/vehicle_3W_main/auto_main.tscn" id="3_tie7g"]
+[ext_resource type="PackedScene" uid="uid://it245pak8ben" path="res://scenes/vehicles/common/vehicle_three_wheeled/vehicle_3W_main/vehicle_3W_main.tscn" id="3_tie7g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rrqrx"]
 size = Vector2(10000, 10000)
@@ -30,4 +30,4 @@ mesh = SubResource("PlaneMesh_rrqrx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AsphaltGround/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xrejn")
 
-[node name="AutoMain" parent="." instance=ExtResource("3_tie7g")]
+[node name="Vehicle_3W_Main" parent="." instance=ExtResource("3_tie7g")]

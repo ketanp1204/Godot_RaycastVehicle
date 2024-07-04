@@ -1,6 +1,7 @@
 extends Node3D
 
-enum INTERACTION_STATE { OFF, SINGLE, CONTINUOUS, RAPID}
+enum WIPER_MODE { OFF, SINGLE, CONTINUOUS, RAPID}
+enum WIPER_MOVE_STATE { OFF, RESTART_DELAY, TOWARDS_MAX, TOWARDS_ZERO }
 
 @export_category("Mesh")
 ## Mesh resource for the wiper
@@ -14,18 +15,27 @@ enum INTERACTION_STATE { OFF, SINGLE, CONTINUOUS, RAPID}
 ## Rotation speed of the wiper in the SINGLE and CONTINUOUS states (degrees per second)
 @export var low_rotation_speed: float = 120
 ## Rotation speed of the wiper in the RAPID state (degrees per second)
-@export var high_rotation_speed: float = 200
+@export var high_rotation_speed: float = 180
 
 @onready var wiper_mesh = $WiperMesh
 @onready var mouse_handle = $MouseHandle
 
-var state: INTERACTION_STATE
+var wiper_mode: WIPER_MODE
+var wiper_move_state: WIPER_MOVE_STATE
 
+var from_angle: float = 0.0
 var anim_length: float
 var current_tween: Tween
 var is_first_tween_step: bool = true
 var tween_timer: float = 0.0
+var delay: float = 0.0 
+var stop_animation: bool = false
+var loop_rotation: bool = false
 
+signal towards_max_completed
+signal towards_max_from_current_completed
+signal towards_zero_completed
+signal towards_zero_from_current_completed
 
 
 func _ready():
@@ -37,210 +47,312 @@ func _ready():
 		else:
 			wiper_mesh.mesh = wiper_meshres
 	
-	# Set the default interaction state
-	state = INTERACTION_STATE.OFF
+	# Set the default wiper mode and move state
+	wiper_mode = WIPER_MODE.OFF
+	wiper_move_state = WIPER_MOVE_STATE.OFF
 	
 	# Connect the mouse handle click signal
 	mouse_handle.mouse_clicked.connect(toggle)
-	
 
 
 func toggle() -> void:
-	if state == INTERACTION_STATE.OFF:
+	if wiper_mode == WIPER_MODE.OFF:
 		wiper_single_state()
-	elif state == INTERACTION_STATE.SINGLE:
+	elif wiper_mode == WIPER_MODE.SINGLE:
 		wiper_continuous_state()
-	elif state == INTERACTION_STATE.CONTINUOUS:
+	elif wiper_mode == WIPER_MODE.CONTINUOUS:
 		wiper_rapid_state()
-	elif state == INTERACTION_STATE.RAPID:
+	elif wiper_mode == WIPER_MODE.RAPID:
 		wiper_off_state()
 
 
+func wiper_move_towards_max() -> void:
+	wiper_move_state = WIPER_MOVE_STATE.TOWARDS_MAX
+	var t: float = 0.0
+	while (t < anim_length):
+		if stop_animation:
+			stop_animation = false
+			return
+		rotation_degrees.y = lerpf(
+							0.0, 
+							max_rotate_angle, 
+							t / anim_length)
+		t += get_process_delta_time()
+		await get_tree().process_frame
+	# Emit the towards max completed signal
+	towards_max_completed.emit()
 
+
+func wiper_move_towards_max_from_current() -> void:
+	wiper_move_state = WIPER_MOVE_STATE.TOWARDS_MAX
+	var t: float = 0.0
+	while (t < anim_length):
+		if stop_animation:
+			stop_animation = false
+			return
+		rotation_degrees.y = lerpf(
+							from_angle, 
+							max_rotate_angle, 
+							t / anim_length)
+		t += get_process_delta_time()
+		await get_tree().process_frame
+	# Emit the towards max from current completed signal
+	towards_max_from_current_completed.emit()
+
+
+func wiper_move_towards_zero() -> void:
+	wiper_move_state = WIPER_MOVE_STATE.TOWARDS_ZERO
+	var t: float = 0.0
+	while (t < anim_length):
+		if stop_animation:
+			stop_animation = false
+			return
+		rotation_degrees.y = lerpf(
+			max_rotate_angle,  
+			0.0,
+			t / anim_length
+		)
+		t += get_process_delta_time()
+		await get_tree().process_frame
+	# Emit the towards zero completed signal
+	towards_zero_completed.emit()
+
+
+func wiper_move_towards_zero_from_current() -> void:
+	wiper_move_state = WIPER_MOVE_STATE.TOWARDS_ZERO
+	var t: float = 0.0
+	while (t < anim_length):
+		if stop_animation:
+			stop_animation = false
+			return
+		rotation_degrees.y = lerpf(
+			from_angle,
+			0.0,
+			t / anim_length
+		)
+		t += get_process_delta_time()
+		await get_tree().process_frame
+	# Emit the towards zero from current completed signal
+	towards_zero_from_current_completed.emit()
+
+
+func wiper_rotation() -> void:
+	wiper_move_towards_max()
+	await towards_max_completed
+	wiper_move_towards_zero()
+	await towards_zero_completed
+	if loop_rotation:
+		if delay > 0:
+			# Change wiper mode to RESTART_DELAY
+			wiper_move_state = WIPER_MOVE_STATE.RESTART_DELAY
+			await get_tree().create_timer(delay).timeout
+			
+			# Restart only if mode is still SINGLE
+			if delay > 0:
+				wiper_rotation()
+		else:
+			# In CONTINUOUS or RAPID mode -> restart immediately
+			wiper_rotation()
+
+
+func start_single_state_anim() -> void:
+	# Change wiper mode to SINGLE
+	wiper_mode = WIPER_MODE.SINGLE
+	# Set delay to restart delay value
+	delay = restart_delay
+	# Set from angle to zero
+	from_angle = 0.0
+	# Set animation length
+	anim_length = max_rotate_angle / low_rotation_speed
+	# Start wiper rotation
+	wiper_rotation()
 
 
 func wiper_single_state() -> void:
-	# Set tween anim length
-	anim_length = abs(max_rotate_angle) / low_rotation_speed
-	
-	# Set state to SINGLE
-	state = INTERACTION_STATE.SINGLE
-	
-	var tween = create_tween().set_loops()
-	tween.connect("step_finished", on_tween_step_finished)
-	tween.tween_property(
-		self,
-		"rotation_degrees:y",
-		max_rotate_angle,
-		anim_length
-	)
-	tween.tween_property(
-		self,
-		"rotation_degrees:y",
-		0.0,
-		anim_length
-	)
-	tween.tween_interval(restart_delay)
-	current_tween = tween
+	# If wiper is off, start SINGLE mode behavior immediately
+	if wiper_move_state == WIPER_MOVE_STATE.OFF:
+		# Set loop rotation to true
+		loop_rotation = true
+		# Start animation
+		start_single_state_anim()
+	# If wiper is moving towards zero after RAPID -> OFF state,
+	# wait for it to finish and then start SINGLE state behavior
+	elif wiper_move_state == WIPER_MOVE_STATE.TOWARDS_ZERO:
+		# Set loop rotation to false
+		loop_rotation = false
+		# Wait for wiper animation to zero
+		await towards_zero_completed
+		# Set loop rotation to true
+		loop_rotation = true
+		# Start animation
+		start_single_state_anim()
+
+
+func start_continuous_state_anim() -> void:
+	# Change wiper mode to CONTINUOUS
+		wiper_mode = WIPER_MODE.CONTINUOUS
+		# Set delay to 0. This will stop SINGLE mode animation
+		delay = 0.0
+		# Set from angle to zero
+		from_angle = 0.0
+		# Set animation length
+		anim_length = abs(max_rotate_angle) / low_rotation_speed
+		# Start wiper rotation
+		wiper_rotation()
 
 
 func wiper_continuous_state() -> void:
-	
-	# Wait for SINGLE tween to complete
-	await wait_for_low_speed_tween_completed()
-	
-	# Set tween anim length
-	anim_length = abs(max_rotate_angle) / low_rotation_speed
-	
-	# Change state to CONTINUOUS
-	state = INTERACTION_STATE.CONTINUOUS
-	
-	var tween = create_tween().set_loops()
-	tween.connect("step_finished", on_tween_step_finished)
-	tween.tween_property(
-		self,
-		"rotation_degrees:y",
-		max_rotate_angle,
-		anim_length
-	)
-	tween.tween_property(
-		self,
-		"rotation_degrees:y",
-		0.0,
-		anim_length
-	)
-	current_tween = tween
+	# If wiper is in the RESTART_DELAY move state, 
+	# start CONTINUOUS state behaviour immediately
+	if wiper_move_state == WIPER_MOVE_STATE.RESTART_DELAY:
+		# Start animation
+		start_continuous_state_anim()
+	# If wiper is in the TOWARDS_ZERO move state,
+	# wait for it to finish and then start CONTINUOUS mode behavior
+	elif wiper_move_state == WIPER_MOVE_STATE.TOWARDS_ZERO:
+		# Set loop rotation to false
+		loop_rotation = false
+		# Wait for wiper animation to zero
+		await towards_zero_completed
+		# Set loop rotation to true
+		loop_rotation = true
+		# Start animation
+		start_continuous_state_anim()
+	# If wiper is in the TOWARDS_MAX move state, 
+	# wait for it to finish and then wait for TOWARDS_ZERO to finish,
+	# and then start CONTINUOUS mode behavior
+	elif wiper_move_state == WIPER_MOVE_STATE.TOWARDS_MAX:
+		# Set loop rotation to false
+		loop_rotation = false
+		# Wait for wiper animation to max
+		await towards_max_completed
+		# Wait for wiper animation to zero
+		await towards_zero_completed
+		# Set loop rotation to true
+		loop_rotation = true
+		# Start animation
+		start_continuous_state_anim()
 
 
 func wiper_rapid_state() -> void:
-	
-	if is_first_tween_step:
-		
-		current_tween.kill()
-		
-		# Set tween anim length
-		anim_length = (max_rotate_angle - rotation_degrees.y) / high_rotation_speed
-		
-		# Set state to SINGLE
-		state = INTERACTION_STATE.RAPID
-		
-		var tween = create_tween()
-		tween.connect("step_finished", on_tween_step_finished)
-		tween.connect("finished", wiper_rapid_state_from_zero)
-		tween.tween_property(
-			self,
-			"rotation_degrees:y",
-			max_rotate_angle,
-			anim_length
-		).from_current()
-		tween.tween_property(
-			self,
-			"rotation_degrees:y",
-			0.0,
-			anim_length
-		)
-		current_tween = tween
-	else:
-		current_tween.kill()
-		
-		# Set tween anim length
-		anim_length = rotation_degrees.y / high_rotation_speed
-		
-		# Set state to SINGLE
-		state = INTERACTION_STATE.RAPID
-		
-		var tween = create_tween()
-		tween.connect("step_finished", on_tween_step_finished)
-		tween.connect("finished", wiper_rapid_state_from_zero)
-		tween.tween_property(
-			self,
-			"rotation_degrees:y",
-			0.0,
-			anim_length
-		).from_current()
-		current_tween = tween
-
-
-func wiper_rapid_state_from_zero() -> void:
-
-	# Set tween anim length
-	anim_length = abs(max_rotate_angle) / high_rotation_speed
-	
-	# Kill the temporary tween
-	current_tween.kill()
-	
-	var tween = create_tween().set_loops()
-	tween.connect("step_finished", on_tween_step_finished)
-	tween.tween_property(
-		self,
-		"rotation_degrees:y",
-		max_rotate_angle,
-		anim_length
-	)
-	tween.tween_property(
-		self,
-		"rotation_degrees:y",
-		0.0,
-		anim_length
-	)
-	current_tween = tween
+	# If wiper is in the TOWARDS_ZERO move state,
+	# stop it and then start RAPID mode behavior towards zero
+	if wiper_move_state == WIPER_MOVE_STATE.TOWARDS_ZERO:
+		# Set loop rotation to false
+		loop_rotation = false
+		# Stop wiper animation immediately
+		stop_animation = true
+		# Wait for one frame to stop the animation
+		await get_tree().process_frame
+		# Change wiper mode to RAPID
+		wiper_mode = WIPER_MODE.RAPID
+		# Set delay to 0
+		delay = 0.0
+		# Set from angle to current rotation value
+		from_angle = rotation_degrees.y
+		# Set animation length
+		anim_length = from_angle / high_rotation_speed
+		# Finish the TOWARDS_ZERO anim with high speed
+		wiper_move_towards_zero_from_current()
+		await towards_zero_from_current_completed
+		# Set loop rotation to true
+		loop_rotation = true
+		# Reset from_angle back to zero
+		from_angle = 0.0
+		# Set animation length
+		anim_length = max_rotate_angle / high_rotation_speed
+		# Restart wiper animation
+		wiper_rotation()
+	# If wiper is in the TOWARDS_MAX move state, 
+	# stop it and start RAPID mode behavior to max,
+	# and then start RAPID mode behavior towards zero
+	elif wiper_move_state == WIPER_MOVE_STATE.TOWARDS_MAX:
+		# Set loop rotation to false
+		loop_rotation = false
+		# Stop wiper animation immediately
+		stop_animation = true
+		# Wait for one frame to stop the animation
+		await get_tree().process_frame
+		# Change wiper mode to RAPID
+		wiper_mode = WIPER_MODE.RAPID
+		# Set delay to 0
+		delay = 0.0
+		# Set from angle to current rotation value
+		from_angle = rotation_degrees.y
+		# Set animation length
+		anim_length = (max_rotate_angle - from_angle) / high_rotation_speed
+		# Finish the TOWARDS_MAX anim with high speed
+		wiper_move_towards_max_from_current()
+		await towards_max_from_current_completed
+		# Reset from_angle back to zero
+		from_angle = 0.0
+		# Set animation length
+		anim_length = max_rotate_angle / high_rotation_speed
+		# Finish the TOWARDS_ZERO anim with high speed
+		wiper_move_towards_zero()
+		await towards_zero_completed
+		# Set loop rotation to true
+		loop_rotation = true
+		# Restart wiper animation
+		wiper_rotation()
 
 
 func wiper_off_state() -> void:
-	if is_first_tween_step:
-		current_tween.kill()
-		
-		state = INTERACTION_STATE.OFF
-		
-		# Set tween anim length
-		anim_length = (max_rotate_angle - rotation_degrees.y) / low_rotation_speed
-		
-		var tween = create_tween()
-		tween.tween_property(
-			self,
-			"rotation_degrees:y",
-			max_rotate_angle,
-			anim_length
-		).from_current()
-		tween.tween_property(
-			self,
-			"rotation_degrees:y",
-			0.0,
-			anim_length
-		)
-		current_tween = tween
-	else:
-		current_tween.kill()
-		
-		state = INTERACTION_STATE.OFF
-		
-		# Set tween anim length
-		anim_length = rotation_degrees.y / low_rotation_speed
-		
-		var tween = create_tween()
-		tween.tween_property(
-			self,
-			"rotation_degrees:y",
-			0.0,
-			anim_length
-		).from_current()
-		current_tween = tween
+	# If wiper is in the TOWARDS_ZERO move state,
+	# stop it and then move the wiper TOWARDS_ZERO with low speed
+	if wiper_move_state == WIPER_MOVE_STATE.TOWARDS_ZERO:
+		# Set loop rotation to false
+		loop_rotation = false
+		# Stop wiper animation immediately
+		stop_animation = true
+		# Wait for one frame to stop the animation
+		await get_tree().process_frame
+		# Change wiper mode to OFF
+		wiper_mode = WIPER_MODE.OFF
+		# Set delay to 0
+		delay = 0.0
+		# Set from_angle to current rotation value
+		from_angle = rotation_degrees.y
+		# Set animation length
+		anim_length = from_angle / low_rotation_speed
+		# Finish the TOWARDS_ZERO anim with low speed
+		wiper_move_towards_zero_from_current()
+		await towards_zero_from_current_completed
+		# Change wiper move state to OFF
+		wiper_move_state = WIPER_MOVE_STATE.OFF
+	# If wiper is in the TOWARDS_MAX move state,
+	# stop it and move the wiper TOWARDS_MAX with low speed
+	# and then move the wiper TOWARDS_ZERO with low speed
+	if wiper_move_state == WIPER_MOVE_STATE.TOWARDS_MAX:
+		# Set loop rotation to false
+		loop_rotation = false
+		# Stop wiper animation immediately
+		stop_animation = true
+		# Wait for one frame to stop the animation
+		await get_tree().process_frame
+		# Change wiper mode to OFF
+		wiper_mode = WIPER_MODE.OFF
+		# Change wiper move state to OFF
+		wiper_move_state = WIPER_MOVE_STATE.OFF
+		# Set delay to 0
+		delay = 0.0
+		# Set from_angle to current rotation value
+		from_angle = rotation_degrees.y
+		# Set animation length
+		anim_length = (max_rotate_angle - from_angle) / low_rotation_speed
+		# Finish the TOWARDS_MAX anim with low speed
+		wiper_move_towards_max_from_current()
+		await towards_max_from_current_completed
+		# Reset from_angle back to zero
+		from_angle = 0.0
+		# Set animation length
+		anim_length = max_rotate_angle / low_rotation_speed
+		# Finish the TOWARDS_ZERO anim with low speed
+		wiper_move_towards_zero()
+		await towards_zero_completed
+		# Change wiper move state to OFF
+		wiper_move_state = WIPER_MOVE_STATE.OFF
 
-
-func wait_for_low_speed_tween_completed() -> void:
-	if is_first_tween_step:
-		var remaining_time = (max_rotate_angle - rotation_degrees.y) / low_rotation_speed
-		await get_tree().create_timer(remaining_time).timeout
-		await get_tree().create_timer(anim_length).timeout
-		current_tween.kill()
-	else:
-		var remaining_time = rotation_degrees.y / low_rotation_speed
-		await get_tree().create_timer(remaining_time).timeout
-		current_tween.kill()
-
-
-func on_tween_step_finished(idx: int):
-	if idx == 0:
-		is_first_tween_step = false
-	else:
-		is_first_tween_step = true
+func _input(event):
+	if event.is_action_pressed("WiperToggle"):
+		toggle()
