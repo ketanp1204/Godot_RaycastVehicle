@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scenes/vehicles/common/cameras/vehicle_cameras.gd" id="1_gwy3s"]
 
-[node name="VehicleCameras" type="Node3D" node_paths=PackedStringArray("cameras", "default_camera")]
+[node name="Vehicle_Cameras" type="Node3D"]
 script = ExtResource("1_gwy3s")
-cameras = [NodePath("SpringArm_Internal/Camera_Internal"), NodePath("SpringArm_Chasing/Camera_Chasing")]
+camera_nodes = Array[NodePath]([NodePath("SpringArm_Internal/Camera_Internal"), NodePath("SpringArm_Chasing/Camera_Chasing")])
 spring_arm_default_rotations = Array[Vector3]([Vector3(0, -90, 0), Vector3(-10, -90, 0)])
-default_camera = NodePath("SpringArm_Chasing/Camera_Chasing")
+default_camera_node = NodePath("SpringArm_Chasing/Camera_Chasing")
 
 [node name="SpringArm_Chasing" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23505, 0)

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqju0bvkx24rs"]
+
+[ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_81bcu"]
+[ext_resource type="PackedScene" uid="uid://233kufwelntf" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_door/vehicle_4W_door.tscn" id="5_qnuc3"]
+[ext_resource type="PackedScene" uid="uid://dn8qkj47uussj" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_wheel/vehicle_4W_wheel.tscn" id="5_u8rwr"]
+[ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://scenes/vehicles/common/cameras/vehicle_cameras.tscn" id="11_yba4f"]
+
+[node name="Vehicle_4W_Main" type="RigidBody3D"]
+script = ExtResource("1_81bcu")
+car_body_node = NodePath("Car_Body")
+wheel_fl_node = NodePath("Wheel_FL_Pos/Wheel_FL")
+wheel_fr_node = NodePath("Wheel_FR_Pos/Wheel_FR")
+wheel_rl_node = NodePath("Wheel_RL_Pos/Wheel_RL")
+wheel_rr_node = NodePath("Wheel_RR_Pos/Wheel_RR")
+
+[node name="Car_Body" type="MeshInstance3D" parent="."]
+
+[node name="Collision_Shape_3D" type="CollisionShape3D" parent="."]
+
+[node name="Door_FL_Pos" type="Node3D" parent="."]
+
+[node name="Door_FL" parent="Door_FL_Pos" instance=ExtResource("5_qnuc3")]
+
+[node name="Door_FR_Pos" type="Node3D" parent="."]
+
+[node name="Door_FR" parent="Door_FR_Pos" instance=ExtResource("5_qnuc3")]
+
+[node name="Door_RL_Pos" type="Node3D" parent="."]
+
+[node name="Door_RL" parent="Door_RL_Pos" instance=ExtResource("5_qnuc3")]
+
+[node name="Door_RR_Pos" type="Node3D" parent="."]
+
+[node name="Door_RR" parent="Door_RR_Pos" instance=ExtResource("5_qnuc3")]
+
+[node name="Wheel_FL_Pos" type="Node3D" parent="."]
+
+[node name="Wheel_FL" parent="Wheel_FL_Pos" instance=ExtResource("5_u8rwr")]
+
+[node name="Wheel_FR_Pos" type="Node3D" parent="."]
+
+[node name="Wheel_FR" parent="Wheel_FR_Pos" instance=ExtResource("5_u8rwr")]
+
+[node name="Wheel_RL_Pos" type="Node3D" parent="."]
+
+[node name="Wheel_RL" parent="Wheel_RL_Pos" instance=ExtResource("5_u8rwr")]
+
+[node name="Wheel_RR_Pos" type="Node3D" parent="."]
+
+[node name="Wheel_RR" parent="Wheel_RR_Pos" instance=ExtResource("5_u8rwr")]
+
+[node name="BonnetDummy" type="Node3D" parent="."]
+
+[node name="BootDummy" type="Node3D" parent="."]
+
+[node name="SteeringWheelDummy" type="Node3D" parent="."]
+
+[node name="VehicleCameras" parent="." instance=ExtResource("11_yba4f")]
+
+[node name="CentreOfMassVisual" type="Marker3D" parent="."]

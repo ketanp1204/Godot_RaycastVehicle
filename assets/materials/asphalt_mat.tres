@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dayx1unrgj6x4" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_GLOSS_2K.jpg" id="6_irjdm"]
 
 [resource]
+cull_mode = 2
 albedo_texture = ExtResource("1_bt4b8")
 metallic = 1.0
 metallic_texture = ExtResource("4_jt144")

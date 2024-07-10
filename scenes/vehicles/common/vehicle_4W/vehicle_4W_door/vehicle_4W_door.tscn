@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://233kufwelntf"]
+
+[ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_door/vehicle_4W_door.gd" id="1_d11w5"]
+[ext_resource type="PackedScene" uid="uid://cwhrwf2tqh136" path="res://scenes/vehicles/common/mouse_handle/mouse_handle.tscn" id="2_ley33"]
+
+[node name="Vehicle_4W_Door" type="Node3D"]
+script = ExtResource("1_d11w5")
+door_mesh_node = NodePath("Door_Mesh")
+external_handle_node = NodePath("External_Handle")
+
+[node name="Door_Mesh" type="MeshInstance3D" parent="."]
+
+[node name="External_Handle" parent="." instance=ExtResource("2_ley33")]

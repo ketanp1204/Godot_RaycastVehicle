@@ -1,14 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://n5as80wr3fph"]
+[gd_scene load_steps=15 format=3 uid="uid://n5as80wr3fph"]
 
-[ext_resource type="Environment" uid="uid://dakcks2j7d8va" path="res://assets/environment/default_env.tres" id="1_kk42m"]
-[ext_resource type="Material" uid="uid://t46yamirynhg" path="res://assets/materials/asphalt_mat.tres" id="2_y2tle"]
-[ext_resource type="PackedScene" uid="uid://it245pak8ben" path="res://scenes/vehicles/common/vehicle_three_wheeled/vehicle_3W_main/vehicle_3W_main.tscn" id="3_tie7g"]
+[ext_resource type="Texture2D" uid="uid://dbca2hyap8kge" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_COL_2K.jpg" id="1_gpmwc"]
+[ext_resource type="Environment" uid="uid://dakcks2j7d8va" path="res://assets/environment/default_env.tres" id="1_issdh"]
+[ext_resource type="Texture2D" uid="uid://b04fyujtm0lqp" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_AO_2K.jpg" id="2_b0x4r"]
+[ext_resource type="Texture2D" uid="uid://c0atpp3ii15jj" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_DISP_2K.jpg" id="3_ynvia"]
+[ext_resource type="Texture2D" uid="uid://camgjnst0v3yj" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_REFL_2K.jpg" id="4_kjulf"]
+[ext_resource type="Texture2D" uid="uid://6rba86f3cb4v" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_NRM_2K.jpg" id="5_4kuox"]
+[ext_resource type="Texture2D" uid="uid://dayx1unrgj6x4" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_GLOSS_2K.jpg" id="6_rdfim"]
+[ext_resource type="Material" uid="uid://b5l86vtwlh4a7" path="res://assets/materials/concrete_mat.tres" id="7_q4euk"]
+[ext_resource type="PackedScene" uid="uid://cqi3r33eds88b" path="res://scenes/vehicles/suzuki_sx4_sportback/sx4_main.tscn" id="8_bvxs2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rrqrx"]
 size = Vector2(10000, 10000)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtoi5"]
+albedo_texture = ExtResource("1_gpmwc")
+metallic = 1.0
+metallic_texture = ExtResource("4_kjulf")
+metallic_texture_channel = 3
+roughness_texture = ExtResource("6_rdfim")
+roughness_texture_channel = 3
+normal_enabled = true
+normal_texture = ExtResource("5_4kuox")
+ao_enabled = true
+ao_texture = ExtResource("2_b0x4r")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_ynvia")
+uv1_scale = Vector3(2500, 2500, 50)
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xrejn"]
 data = PackedVector3Array(5000, 0, 5000, -5000, 0, 5000, 5000, 0, -5000, -5000, 0, 5000, -5000, 0, -5000, 5000, 0, -5000)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_macnd"]
+size = Vector2(30, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v0b23"]
+data = PackedVector3Array(15, 0, 15, -15, 0, 15, 15, 0, -15, -15, 0, 15, -15, 0, -15, 15, 0, -15)
 
 [node name="Playground" type="Node3D"]
 
@@ -19,15 +46,26 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
-environment = ExtResource("1_kk42m")
+environment = ExtResource("1_issdh")
 
 [node name="AsphaltGround" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_y2tle")
 mesh = SubResource("PlaneMesh_rrqrx")
+surface_material_override/0 = SubResource("StandardMaterial3D_vtoi5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="AsphaltGround"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AsphaltGround/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xrejn")
 
-[node name="Vehicle_3W_Main" parent="." instance=ExtResource("3_tie7g")]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 2.68537, 9.18319)
+mesh = SubResource("PlaneMesh_macnd")
+surface_material_override/0 = ExtResource("7_q4euk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_v0b23")
+
+[node name="Suzuki_SX4_Sportback" parent="." instance=ExtResource("8_bvxs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -12.6143)

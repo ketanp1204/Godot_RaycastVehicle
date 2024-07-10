@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1cvoqhnnwqkh"]
+
+[ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_3W/vehicle_3W_wiper/vehicle_3W_wiper.gd" id="1_x570c"]
+[ext_resource type="PackedScene" uid="uid://cwhrwf2tqh136" path="res://scenes/vehicles/common/mouse_handle/mouse_handle.tscn" id="2_lt8ix"]
+
+[node name="Vehicle_3W_Wiper" type="Node3D"]
+script = ExtResource("1_x570c")
+
+[node name="WiperMesh" type="MeshInstance3D" parent="."]
+
+[node name="MouseHandle" parent="." instance=ExtResource("2_lt8ix")]

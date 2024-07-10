@@ -1,0 +1,26 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://b5l86vtwlh4a7"]
+
+[ext_resource type="Texture2D" uid="uid://dbka6ojuymmu6" path="res://assets/textures/ConcretePrecastPlates_004/ConcretePrecastPlates004_COL_2K_METALNESS.png" id="1_p7hvo"]
+[ext_resource type="Texture2D" uid="uid://hfa24e2vmvl0" path="res://assets/textures/ConcretePrecastPlates_004/ConcretePrecastPlates004_AO_2K_METALNESS.png" id="2_mb13l"]
+[ext_resource type="Texture2D" uid="uid://b5i3lfx2nercb" path="res://assets/textures/ConcretePrecastPlates_004/ConcretePrecastPlates004_DISP_2K_METALNESS.png" id="3_oae2d"]
+[ext_resource type="Texture2D" uid="uid://dirmt2fuoilhx" path="res://assets/textures/ConcretePrecastPlates_004/ConcretePrecastPlates004_METALNESS_2K_METALNESS.png" id="4_rh7uu"]
+[ext_resource type="Texture2D" uid="uid://bupbrhd8d33si" path="res://assets/textures/ConcretePrecastPlates_004/ConcretePrecastPlates004_NRM_2K_METALNESS.png" id="5_ci8t4"]
+[ext_resource type="Texture2D" uid="uid://c3jkmfpp0lxpd" path="res://assets/textures/ConcretePrecastPlates_004/ConcretePrecastPlates004_ROUGHNESS_2K_METALNESS.png" id="6_72v0d"]
+
+[resource]
+cull_mode = 2
+albedo_color = Color(0.683077, 0.683077, 0.683077, 1)
+albedo_texture = ExtResource("1_p7hvo")
+metallic = 0.19
+metallic_texture = ExtResource("4_rh7uu")
+metallic_texture_channel = 3
+roughness_texture = ExtResource("6_72v0d")
+roughness_texture_channel = 3
+normal_enabled = true
+normal_texture = ExtResource("5_ci8t4")
+ao_enabled = true
+ao_texture = ExtResource("2_mb13l")
+ao_texture_channel = 3
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_oae2d")
+uv1_scale = Vector3(3, 3, 3)
