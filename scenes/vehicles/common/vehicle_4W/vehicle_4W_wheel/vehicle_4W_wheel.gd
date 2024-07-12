@@ -79,7 +79,7 @@ func _ready():
 	# Set the mesh of the MeshInstance3D if not set
 	if wheel_mesh.mesh == null:
 		if wheel_mesh_resource == null:
-			print("ERROR @ Node " + name + ": Wheel mesh not set in the inspector")
+			print(name + "(Vehicle_4W_Wheel): wheel mesh not set in the inspector")
 			return
 		else:
 			wheel_mesh.mesh = wheel_mesh_resource

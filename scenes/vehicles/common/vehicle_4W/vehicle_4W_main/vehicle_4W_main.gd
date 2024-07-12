@@ -67,7 +67,7 @@ func _ready():
 	# Set the mesh of the MeshInstance3D if not set
 	if car_body_mesh.mesh == null:
 		if car_body_meshres == null:
-			print("ERROR @ Node " + name + ": Car body mesh not set in the inspector")
+			print(name + "(Vehicle_4W_Main): vehicle body mesh not set in the inspector")
 			# Prevent rigidbody being affected by gravity
 			freeze = true
 			return

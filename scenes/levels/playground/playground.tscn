@@ -68,4 +68,4 @@ surface_material_override/0 = ExtResource("7_q4euk")
 shape = SubResource("ConcavePolygonShape3D_v0b23")
 
 [node name="Suzuki_SX4_Sportback" parent="." instance=ExtResource("8_bvxs2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.837156, -10.3805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14811, -10.0823)

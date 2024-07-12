@@ -38,7 +38,7 @@ func _ready() -> void:
 	# Set the mesh of the MeshInstance3D if not set
 	if mesh.mesh == null:
 		if mesh_res == null:
-			print("ERROR @ Node " + name + ": Vehicle_4W part mesh not set in the inspector")
+			print(name + "(Vehicle_4W_Interactable): interactable part mesh not set in the inspector")
 			return
 		else:
 			mesh.mesh = mesh_res

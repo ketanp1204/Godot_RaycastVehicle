@@ -100,12 +100,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353, 0.199, 0.222)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307, 0.853, 0.913)
 script = ExtResource("11_x0x78")
 mesh_res = ExtResource("8_6m1b1")
-mesh_node = NodePath("Door_Mesh")
+mesh_node = NodePath("SX4_Door_RR")
 external_handle_node = NodePath("External_Handle")
 internal_handle_node = NodePath("Internal_Handle")
 rotation_axis = 1
 
-[node name="Door_Mesh" type="MeshInstance3D" parent="Door_RR_Pos"]
+[node name="SX4_Door_RR" type="MeshInstance3D" parent="Door_RR_Pos"]
 mesh = ExtResource("8_6m1b1")
 skeleton = NodePath("")
 
