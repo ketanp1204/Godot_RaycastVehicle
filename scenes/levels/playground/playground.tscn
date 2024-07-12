@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://6rba86f3cb4v" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_NRM_2K.jpg" id="5_4kuox"]
 [ext_resource type="Texture2D" uid="uid://dayx1unrgj6x4" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_GLOSS_2K.jpg" id="6_rdfim"]
 [ext_resource type="Material" uid="uid://b5l86vtwlh4a7" path="res://assets/materials/concrete_mat.tres" id="7_q4euk"]
-[ext_resource type="PackedScene" uid="uid://cqi3r33eds88b" path="res://scenes/vehicles/suzuki_sx4_sportback/sx4_main.tscn" id="8_bvxs2"]
+[ext_resource type="PackedScene" uid="uid://c41jmssefcgcg" path="res://scenes/vehicles/suzuki_sx4_sportback/sx4_main.tscn" id="8_bvxs2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rrqrx"]
 size = Vector2(10000, 10000)
@@ -68,4 +68,4 @@ surface_material_override/0 = ExtResource("7_q4euk")
 shape = SubResource("ConcavePolygonShape3D_v0b23")
 
 [node name="Suzuki_SX4_Sportback" parent="." instance=ExtResource("8_bvxs2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -12.6143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.837156, -10.3805)

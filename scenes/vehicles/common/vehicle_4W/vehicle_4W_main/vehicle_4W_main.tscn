@@ -49,11 +49,11 @@ wheel_rr_node = NodePath("Wheel_RR_Pos/Wheel_RR")
 
 [node name="Wheel_RR" parent="Wheel_RR_Pos" instance=ExtResource("5_u8rwr")]
 
-[node name="BonnetDummy" type="Node3D" parent="."]
+[node name="Bonnet_Pos" type="Node3D" parent="."]
 
-[node name="BootDummy" type="Node3D" parent="."]
+[node name="Boot_Pos" type="Node3D" parent="."]
 
-[node name="SteeringWheelDummy" type="Node3D" parent="."]
+[node name="Steering_Wheel_Pos" type="Node3D" parent="."]
 
 [node name="VehicleCameras" parent="." instance=ExtResource("11_yba4f")]
 

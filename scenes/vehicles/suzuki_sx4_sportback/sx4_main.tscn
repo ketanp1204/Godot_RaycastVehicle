@@ -1,27 +1,29 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqi3r33eds88b"]
+[gd_scene load_steps=17 format=3 uid="uid://c41jmssefcgcg"]
 
-[ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_26xgx"]
+[ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_ji083"]
 [ext_resource type="ArrayMesh" uid="uid://b7sghu72o4nj3" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Car_Body.res" id="2_mhpva"]
-[ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_door/vehicle_4W_door.gd" id="3_xlwbo"]
+[ext_resource type="PackedScene" uid="uid://dn8qkj47uussj" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_wheel/vehicle_4W_wheel.tscn" id="3_gsrx2"]
+[ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://scenes/vehicles/common/cameras/vehicle_cameras.tscn" id="4_22l21"]
 [ext_resource type="ArrayMesh" uid="uid://dsikfakaln8o8" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Door_FL.res" id="4_ogrjc"]
 [ext_resource type="PackedScene" uid="uid://cwhrwf2tqh136" path="res://scenes/vehicles/common/mouse_handle/mouse_handle.tscn" id="5_uyl6q"]
 [ext_resource type="ArrayMesh" uid="uid://2supf0lfkprt" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Door_FR.res" id="6_pggeb"]
 [ext_resource type="ArrayMesh" uid="uid://3puyqfpefdh0" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Door_RL.res" id="7_sokje"]
 [ext_resource type="ArrayMesh" uid="uid://bxmr5cpk0fl6a" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Door_RR.res" id="8_6m1b1"]
-[ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_wheel/vehicle_4W_wheel.gd" id="9_gywwl"]
 [ext_resource type="ArrayMesh" uid="uid://dgg0otaxtu3yg" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Wheel_L.res" id="10_f6n5c"]
 [ext_resource type="ArrayMesh" uid="uid://cllsxarwvcvad" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Wheel_R.res" id="11_eifqv"]
-[ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://scenes/vehicles/common/cameras/vehicle_cameras.tscn" id="12_6qleo"]
+[ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_4W/common/vehicle_4W_interactable.gd" id="11_x0x78"]
 [ext_resource type="ArrayMesh" uid="uid://bi1p6qepjjjhe" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Steering_Wheel.res" id="12_hw0i2"]
+[ext_resource type="ArrayMesh" uid="uid://b7e2ayk6bi22y" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Bonnet.res" id="12_lv6qr"]
+[ext_resource type="ArrayMesh" uid="uid://ddbcvb615xc76" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Boot.res" id="14_aqisf"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7p7ow"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_phnck"]
 points = PackedVector3Array(-1.87563, 0.461188, -0.963872, 1.78182, 0.179734, -0.893411, -0.960829, 1.65689, -0.682398, -1.87563, 0.320375, 0.935428, -1.49934, 1.61777, 0.548498, 1.79467, 0.234141, 0.805832, 1.99289, 0.953516, -0.119636, -1.45348, 0.109328, 0.653954, 0.149127, 1.58727, 0.584336, 1.78182, 0.953516, -0.823135, -1.9457, 1.30486, -0.541475, 1.78182, 0.953516, 0.794691, -2.15677, 0.812876, 0.653954, -1.45348, 1.09381, 0.935428, -1.9457, 0.250141, -0.823135, -1.45348, 1.86794, 0.0209156, 0.208762, 1.57609, -0.539662, 2.19973, 0.274664, 0.359818, 1.78182, 0.390953, 0.935428, -1.24241, 0.953516, -0.963872, -2.14668, 0.412189, -0.455015, 1.71131, 0.461188, -0.963872, 2.19071, 0.277624, -0.386712, 1.29431, 0.152344, 0.621266, -1.10184, 1.58649, 0.724229, -1.9457, 1.30486, 0.513031, -1.9457, 0.250141, 0.794691, -1.80513, 0.179734, -0.330648, 2.1873, 0.616808, 0.154663, -1.83975, 1.08815, -0.779615, 0.270067, 1.5754, 0.387192, -1.47846, 1.60914, -0.569225)
 
 [node name="Suzuki_SX4_Sportback" type="RigidBody3D"]
 mass = 126.53
 center_of_mass_mode = 1
-center_of_mass = Vector3(0, 0.15, 0)
-script = ExtResource("1_26xgx")
+center_of_mass = Vector3(0.1, 0, 0)
+script = ExtResource("1_ji083")
 car_body_meshres = ExtResource("2_mhpva")
 car_body_node = NodePath("Car_Body")
 wheel_fl_node = NodePath("Wheel_FL_Pos/SX4_Wheel_FL")
@@ -33,150 +35,160 @@ steering_wheel_mesh_node = NodePath("Steering_Wheel_Pos")
 [node name="Car_Body" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_mhpva")
 
-[node name="Collision_Shape_3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_7p7ow")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_phnck")
 
 [node name="Door_FL_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773, 0.816, -0.89)
-
-[node name="SX4_Door_FL" type="Node3D" parent="Door_FL_Pos"]
-script = ExtResource("3_xlwbo")
-door_mesh_res = ExtResource("4_ogrjc")
-door_mesh_node = NodePath("Door_Mesh")
+script = ExtResource("11_x0x78")
+mesh_res = ExtResource("4_ogrjc")
+mesh_node = NodePath("SX4_Door_FL")
 external_handle_node = NodePath("External_Handle")
+internal_handle_node = NodePath("Internal_Handle")
 rotation_axis = 1
 negative_rotation = true
 
-[node name="Door_Mesh" type="MeshInstance3D" parent="Door_FL_Pos/SX4_Door_FL"]
+[node name="SX4_Door_FL" type="MeshInstance3D" parent="Door_FL_Pos"]
 mesh = ExtResource("4_ogrjc")
 
-[node name="External_Handle" parent="Door_FL_Pos/SX4_Door_FL" instance=ExtResource("5_uyl6q")]
+[node name="External_Handle" parent="Door_FL_Pos" instance=ExtResource("5_uyl6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92172, 0.132569, -0.0205262)
+
+[node name="Internal_Handle" parent="Door_FL_Pos" instance=ExtResource("5_uyl6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484, 0.153, 0.173)
 
 [node name="Door_FR_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773, 0.816, 0.89)
-
-[node name="SX4_Door_FR" type="Node3D" parent="Door_FR_Pos"]
-script = ExtResource("3_xlwbo")
-door_mesh_res = ExtResource("6_pggeb")
-door_mesh_node = NodePath("Door_Mesh")
+script = ExtResource("11_x0x78")
+mesh_res = ExtResource("6_pggeb")
+mesh_node = NodePath("SX4_Door_FR")
 external_handle_node = NodePath("External_Handle")
+internal_handle_node = NodePath("Internal_Handle")
 rotation_axis = 1
 
-[node name="Door_Mesh" type="MeshInstance3D" parent="Door_FR_Pos/SX4_Door_FR"]
+[node name="SX4_Door_FR" type="MeshInstance3D" parent="Door_FR_Pos"]
 mesh = ExtResource("6_pggeb")
+skeleton = NodePath("")
 
-[node name="External_Handle" parent="Door_FR_Pos/SX4_Door_FR" instance=ExtResource("5_uyl6q")]
+[node name="External_Handle" parent="Door_FR_Pos" instance=ExtResource("5_uyl6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.919763, 0.136131, 0.0119827)
+
+[node name="Internal_Handle" parent="Door_FR_Pos" instance=ExtResource("5_uyl6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483771, 0.153475, -0.172716)
 
 [node name="Door_RL_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307, 0.853, -0.913)
-
-[node name="SX4_Door_RL" type="Node3D" parent="Door_RL_Pos"]
-script = ExtResource("3_xlwbo")
-door_mesh_res = ExtResource("7_sokje")
-door_mesh_node = NodePath("Door_Mesh")
+script = ExtResource("11_x0x78")
+mesh_res = ExtResource("7_sokje")
+mesh_node = NodePath("SX4_Door_RL")
 external_handle_node = NodePath("External_Handle")
+internal_handle_node = NodePath("Internal_Handle")
 rotation_axis = 1
 negative_rotation = true
 
-[node name="Door_Mesh" type="MeshInstance3D" parent="Door_RL_Pos/SX4_Door_RL"]
+[node name="SX4_Door_RL" type="MeshInstance3D" parent="Door_RL_Pos"]
 mesh = ExtResource("7_sokje")
+skeleton = NodePath("")
 
-[node name="External_Handle" parent="Door_RL_Pos/SX4_Door_RL" instance=ExtResource("5_uyl6q")]
+[node name="External_Handle" parent="Door_RL_Pos" instance=ExtResource("5_uyl6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825306, 0.150342, 0.0246125)
+
+[node name="Internal_Handle" parent="Door_RL_Pos" instance=ExtResource("5_uyl6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353, 0.199, 0.222)
 
 [node name="Door_RR_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307, 0.853, 0.913)
-
-[node name="SX4_Door_RR" type="Node3D" parent="Door_RR_Pos"]
-script = ExtResource("3_xlwbo")
-door_mesh_res = ExtResource("8_6m1b1")
-door_mesh_node = NodePath("Door_Mesh")
+script = ExtResource("11_x0x78")
+mesh_res = ExtResource("8_6m1b1")
+mesh_node = NodePath("Door_Mesh")
 external_handle_node = NodePath("External_Handle")
+internal_handle_node = NodePath("Internal_Handle")
 rotation_axis = 1
 
-[node name="Door_Mesh" type="MeshInstance3D" parent="Door_RR_Pos/SX4_Door_RR"]
+[node name="Door_Mesh" type="MeshInstance3D" parent="Door_RR_Pos"]
 mesh = ExtResource("8_6m1b1")
+skeleton = NodePath("")
 
-[node name="External_Handle" parent="Door_RR_Pos/SX4_Door_RR" instance=ExtResource("5_uyl6q")]
+[node name="External_Handle" parent="Door_RR_Pos" instance=ExtResource("5_uyl6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825568, 0.161506, -0.0274591)
+
+[node name="Internal_Handle" parent="Door_RR_Pos" instance=ExtResource("5_uyl6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352683, 0.199265, -0.222499)
 
 [node name="Wheel_FL_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264, 0.847, -0.81)
 
-[node name="SX4_Wheel_FL" type="Node3D" parent="Wheel_FL_Pos"]
-script = ExtResource("9_gywwl")
-raycast_3d_node = NodePath("RayCast_3D")
-rest_length = 0.487
-spring_stiffness = 12000.0
-damper_stiffness = 80.0
+[node name="SX4_Wheel_FL" parent="Wheel_FL_Pos" instance=ExtResource("3_gsrx2")]
+spring_stiffness = 5600.0
+damper_stiffness = 50.0
 wheel_mesh_resource = ExtResource("10_f6n5c")
-wheel_mesh_node = NodePath("Wheel_Mesh")
 use_as_steering = true
 
-[node name="Wheel_Mesh" type="MeshInstance3D" parent="Wheel_FL_Pos/SX4_Wheel_FL"]
+[node name="Wheel_Mesh" parent="Wheel_FL_Pos/SX4_Wheel_FL" index="0"]
 mesh = ExtResource("10_f6n5c")
-
-[node name="RayCast_3D" type="RayCast3D" parent="Wheel_FL_Pos/SX4_Wheel_FL"]
 
 [node name="Wheel_FR_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264, 0.847, 0.81)
 
-[node name="SX4_Wheel_FR" type="Node3D" parent="Wheel_FR_Pos"]
-script = ExtResource("9_gywwl")
-raycast_3d_node = NodePath("RayCast_3D")
-rest_length = 0.487
+[node name="SX4_Wheel_FR" parent="Wheel_FR_Pos" instance=ExtResource("3_gsrx2")]
 spring_stiffness = 5600.0
 damper_stiffness = 50.0
 wheel_mesh_resource = ExtResource("11_eifqv")
-wheel_mesh_node = NodePath("Wheel_Mesh")
 use_as_steering = true
 
-[node name="Wheel_Mesh" type="MeshInstance3D" parent="Wheel_FR_Pos/SX4_Wheel_FR"]
+[node name="Wheel_Mesh" parent="Wheel_FR_Pos/SX4_Wheel_FR" index="0"]
 mesh = ExtResource("11_eifqv")
-
-[node name="RayCast_3D" type="RayCast3D" parent="Wheel_FR_Pos/SX4_Wheel_FR"]
 
 [node name="Wheel_RL_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.424, 0.847, -0.81)
 
-[node name="SX4_Wheel_RL" type="Node3D" parent="Wheel_RL_Pos"]
-script = ExtResource("9_gywwl")
-raycast_3d_node = NodePath("RayCast_3D")
-rest_length = 0.487
+[node name="SX4_Wheel_RL" parent="Wheel_RL_Pos" instance=ExtResource("3_gsrx2")]
 spring_stiffness = 5600.0
 damper_stiffness = 50.0
 wheel_mesh_resource = ExtResource("10_f6n5c")
-wheel_mesh_node = NodePath("Wheel_Mesh")
 
-[node name="Wheel_Mesh" type="MeshInstance3D" parent="Wheel_RL_Pos/SX4_Wheel_RL"]
+[node name="Wheel_Mesh" parent="Wheel_RL_Pos/SX4_Wheel_RL" index="0"]
 mesh = ExtResource("10_f6n5c")
-
-[node name="RayCast_3D" type="RayCast3D" parent="Wheel_RL_Pos/SX4_Wheel_RL"]
 
 [node name="Wheel_RR_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.424, 0.847, 0.81)
 
-[node name="SX4_Wheel_RR" type="Node3D" parent="Wheel_RR_Pos"]
-script = ExtResource("9_gywwl")
-raycast_3d_node = NodePath("RayCast_3D")
-rest_length = 0.487
+[node name="SX4_Wheel_RR" parent="Wheel_RR_Pos" instance=ExtResource("3_gsrx2")]
 spring_stiffness = 5600.0
 damper_stiffness = 50.0
 wheel_mesh_resource = ExtResource("11_eifqv")
-wheel_mesh_node = NodePath("Wheel_Mesh")
 
-[node name="Wheel_Mesh" type="MeshInstance3D" parent="Wheel_RR_Pos/SX4_Wheel_RR"]
+[node name="Wheel_Mesh" parent="Wheel_RR_Pos/SX4_Wheel_RR" index="0"]
 mesh = ExtResource("11_eifqv")
 
-[node name="RayCast_3D" type="RayCast3D" parent="Wheel_RR_Pos/SX4_Wheel_RR"]
-
-[node name="BonnetDummy" type="Node3D" parent="."]
+[node name="Bonnet_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.072, 1.083, 0)
+script = ExtResource("11_x0x78")
+mesh_res = ExtResource("12_lv6qr")
+mesh_node = NodePath("SX4_Bonnet")
+external_handle_node = NodePath("Handle")
+rotation_axis = 2
 
-[node name="BootDummy" type="Node3D" parent="."]
+[node name="SX4_Bonnet" type="MeshInstance3D" parent="Bonnet_Pos"]
+mesh = ExtResource("12_lv6qr")
+
+[node name="Handle" parent="Bonnet_Pos" instance=ExtResource("5_uyl6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.968889, -0.254916, 0)
+
+[node name="Boot_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.499, 1.654, 0)
+script = ExtResource("11_x0x78")
+mesh_res = ExtResource("14_aqisf")
+mesh_node = NodePath("SX4_Boot")
+external_handle_node = NodePath("Handle")
+rotation_axis = 2
+negative_rotation = true
+
+[node name="SX4_Boot" type="MeshInstance3D" parent="Boot_Pos"]
+mesh = ExtResource("14_aqisf")
+
+[node name="Handle" parent="Boot_Pos" instance=ExtResource("5_uyl6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575324, -0.85815, 0)
 
 [node name="Steering_Wheel_Pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31, 1.061, -0.356)
@@ -184,7 +196,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31, 1.061, -0.356)
 [node name="Steering_Wheel" type="MeshInstance3D" parent="Steering_Wheel_Pos"]
 mesh = ExtResource("12_hw0i2")
 
-[node name="VehicleCameras" parent="." instance=ExtResource("12_6qleo")]
+[node name="VehicleCameras" parent="." instance=ExtResource("4_22l21")]
 
 [node name="CentreOfMassVisual" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
+
+[editable path="Wheel_FL_Pos/SX4_Wheel_FL"]
+[editable path="Wheel_FR_Pos/SX4_Wheel_FR"]
+[editable path="Wheel_RL_Pos/SX4_Wheel_RL"]
+[editable path="Wheel_RR_Pos/SX4_Wheel_RR"]
