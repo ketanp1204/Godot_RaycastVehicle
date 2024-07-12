@@ -7,7 +7,6 @@ resource_name = "RED LIGHT"
 cull_mode = 2
 albedo_texture = ExtResource("1_m1yl8")
 roughness = 0.208235
-emission_enabled = true
 emission_energy_multiplier = 8.0
 emission_texture = ExtResource("1_m1yl8")
 normal_enabled = true

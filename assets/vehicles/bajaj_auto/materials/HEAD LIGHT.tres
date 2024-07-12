@@ -7,5 +7,4 @@ resource_name = "HEAD LIGHT"
 cull_mode = 2
 albedo_texture = ExtResource("1_07t3u")
 roughness = 0.5
-emission_enabled = true
 emission_texture = ExtResource("1_07t3u")

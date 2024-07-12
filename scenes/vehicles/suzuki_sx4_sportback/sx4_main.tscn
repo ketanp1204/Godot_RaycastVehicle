@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://c41jmssefcgcg"]
+[gd_scene load_steps=19 format=3 uid="uid://c41jmssefcgcg"]
 
 [ext_resource type="Script" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_ji083"]
 [ext_resource type="ArrayMesh" uid="uid://b7sghu72o4nj3" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Car_Body.res" id="2_mhpva"]
+[ext_resource type="Material" uid="uid://p8puy1fwoc8j" path="res://assets/vehicles/suzuki_sx4_sportback/materials/RoughSilver.tres" id="3_1fjhf"]
 [ext_resource type="PackedScene" uid="uid://dn8qkj47uussj" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_wheel/vehicle_4W_wheel.tscn" id="3_gsrx2"]
 [ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://scenes/vehicles/common/cameras/vehicle_cameras.tscn" id="4_22l21"]
 [ext_resource type="ArrayMesh" uid="uid://dsikfakaln8o8" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Door_FL.res" id="4_ogrjc"]
@@ -15,6 +16,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bi1p6qepjjjhe" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Steering_Wheel.res" id="12_hw0i2"]
 [ext_resource type="ArrayMesh" uid="uid://b7e2ayk6bi22y" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Bonnet.res" id="12_lv6qr"]
 [ext_resource type="ArrayMesh" uid="uid://ddbcvb615xc76" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/sx4_sportback_Boot.res" id="14_aqisf"]
+[ext_resource type="PackedScene" uid="uid://br53hfa2kgmu0" path="res://scenes/vehicles/common/vehicle_4W/vehicle_4W_lights/vehicle_4W_lights.tscn" id="16_k76tw"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_phnck"]
 points = PackedVector3Array(-1.87563, 0.461188, -0.963872, 1.78182, 0.179734, -0.893411, -0.960829, 1.65689, -0.682398, -1.87563, 0.320375, 0.935428, -1.49934, 1.61777, 0.548498, 1.79467, 0.234141, 0.805832, 1.99289, 0.953516, -0.119636, -1.45348, 0.109328, 0.653954, 0.149127, 1.58727, 0.584336, 1.78182, 0.953516, -0.823135, -1.9457, 1.30486, -0.541475, 1.78182, 0.953516, 0.794691, -2.15677, 0.812876, 0.653954, -1.45348, 1.09381, 0.935428, -1.9457, 0.250141, -0.823135, -1.45348, 1.86794, 0.0209156, 0.208762, 1.57609, -0.539662, 2.19973, 0.274664, 0.359818, 1.78182, 0.390953, 0.935428, -1.24241, 0.953516, -0.963872, -2.14668, 0.412189, -0.455015, 1.71131, 0.461188, -0.963872, 2.19071, 0.277624, -0.386712, 1.29431, 0.152344, 0.621266, -1.10184, 1.58649, 0.724229, -1.9457, 1.30486, 0.513031, -1.9457, 0.250141, 0.794691, -1.80513, 0.179734, -0.330648, 2.1873, 0.616808, 0.154663, -1.83975, 1.08815, -0.779615, 0.270067, 1.5754, 0.387192, -1.47846, 1.60914, -0.569225)
@@ -31,9 +33,12 @@ wheel_fr_node = NodePath("Wheel_FR_Pos/SX4_Wheel_FR")
 wheel_rl_node = NodePath("Wheel_RL_Pos/SX4_Wheel_RL")
 wheel_rr_node = NodePath("Wheel_RR_Pos/SX4_Wheel_RR")
 steering_wheel_mesh_node = NodePath("Steering_Wheel_Pos")
+lights_node = NodePath("Vehicle_4W_Lights")
 
 [node name="Car_Body" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("2_mhpva")
+surface_material_override/4 = ExtResource("3_1fjhf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_phnck")
@@ -198,6 +203,20 @@ mesh = ExtResource("12_hw0i2")
 
 [node name="VehicleCameras" parent="." instance=ExtResource("4_22l21")]
 
+[node name="Vehicle_4W_Lights" parent="." instance=ExtResource("16_k76tw")]
+
+[node name="LowBeam_L" parent="Vehicle_4W_Lights" index="0"]
+transform = Transform3D(-4.32621e-08, 0.258819, -0.965926, 1.67662e-09, 0.965926, 0.258819, 1, 9.57758e-09, -4.2222e-08, 1.7223, 0.781646, -0.683618)
+
+[node name="LowBeam_R" parent="Vehicle_4W_Lights" index="1"]
+transform = Transform3D(-4.32621e-08, 0.258819, -0.965926, 1.67662e-09, 0.965926, 0.258819, 1, 9.57758e-09, -4.2222e-08, 1.72268, 0.781993, 0.684)
+
+[node name="HighBeam_L" parent="Vehicle_4W_Lights" index="2"]
+transform = Transform3D(-4.37114e-08, -0.0348995, -0.999391, 0, 0.999391, -0.0348995, 1, -1.52551e-09, -4.36848e-08, 1.7813, 0.739397, -0.624478)
+
+[node name="HighBeam_R" parent="Vehicle_4W_Lights" index="3"]
+transform = Transform3D(-4.37114e-08, -0.0348995, -0.999391, 0, 0.999391, -0.0348995, 1, -1.52551e-09, -4.36848e-08, 1.78102, 0.739, 0.624)
+
 [node name="CentreOfMassVisual" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
 
@@ -205,3 +224,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
 [editable path="Wheel_FR_Pos/SX4_Wheel_FR"]
 [editable path="Wheel_RL_Pos/SX4_Wheel_RL"]
 [editable path="Wheel_RR_Pos/SX4_Wheel_RR"]
+[editable path="Vehicle_4W_Lights"]

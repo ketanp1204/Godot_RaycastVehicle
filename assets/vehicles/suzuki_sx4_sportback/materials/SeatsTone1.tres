@@ -3,5 +3,5 @@
 [resource]
 resource_name = "SeatsTone1"
 cull_mode = 2
-albedo_color = Color(0.918352, 0.918245, 0.918245, 1)
+albedo_color = Color(0.628287, 0.671687, 0.484301, 1)
 roughness = 0.5

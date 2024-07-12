@@ -3,5 +3,5 @@
 [resource]
 resource_name = "Biege"
 cull_mode = 2
-albedo_color = Color(0.980869, 0.980869, 0.935441, 1)
+albedo_color = Color(0.654532, 0.642855, 0.345467, 1)
 roughness = 0.5

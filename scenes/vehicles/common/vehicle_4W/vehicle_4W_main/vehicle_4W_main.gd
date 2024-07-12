@@ -1,31 +1,29 @@
 extends RigidBody3D
 
-@export_group("References")
+@export_category("References")
 @export var car_body_meshres: Resource
 @export var car_body_node: NodePath
 @export var wheel_fl_node: NodePath
 @export var wheel_fr_node: NodePath
 @export var wheel_rl_node: NodePath
 @export var wheel_rr_node: NodePath
+@export var steering_wheel_mesh_node: NodePath
+@export var lights_node: NodePath
 
+var car_body_mesh: MeshInstance3D
 var wheel_fl: Node3D
 var wheel_fr: Node3D
 var wheel_rl: Node3D
 var wheel_rr: Node3D
-
-var car_body_mesh: MeshInstance3D
-
-var wheel_fl_mesh: MeshInstance3D
-var wheel_fr_mesh: MeshInstance3D
-var wheel_rl_mesh: MeshInstance3D
-var wheel_rr_mesh: MeshInstance3D
+var lights: Node3D
 
 var wheels: Array[Node3D]
 var wheel_meshes: Array[MeshInstance3D]
 
+
 ########## STEERING ##########
 
-@export var steering_wheel_mesh_node: NodePath
+@export_category("Steering")
 @export var max_steering_angle: float = 35.0
 @export var max_steering_wheel_angle: float = 220.0
 var steering_wheel: Node3D
@@ -45,6 +43,7 @@ func _ready():
 	wheel_rl = get_node(wheel_rl_node) as Node3D
 	wheel_rr = get_node(wheel_rr_node) as Node3D
 	steering_wheel = get_node(steering_wheel_mesh_node) as Node3D
+	lights = get_node(lights_node) as Node3D
 	
 	# Set wheels array
 	wheels.append(wheel_fl)
@@ -63,6 +62,9 @@ func _ready():
 	# Set the initial position of the wheel meshes
 	for i in range(4):
 		wheel_meshes[i].position = Vector3(0.0, -wheels[i].rest_length, 0.0)
+	
+	# Pass the body mesh and headlight index to the Lights node
+	lights.set_mesh_and_material_index(car_body_mesh, 4)
 	
 	# Set the mesh of the MeshInstance3D if not set
 	if car_body_mesh.mesh == null:
