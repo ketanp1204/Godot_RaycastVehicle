@@ -9,6 +9,6 @@
 - Base modular vehicle scenes for implementing different vehicles
 - Interactable car parts (mouse click in viewport to open/close)
 - Internal/Chasing camera with switching
-
+- Interaction sounds (door open/close)
 
 
