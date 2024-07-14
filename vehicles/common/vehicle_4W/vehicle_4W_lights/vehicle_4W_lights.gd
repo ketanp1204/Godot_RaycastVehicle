@@ -7,11 +7,13 @@ enum LIGHT_MODES { OFF, PARK, MAIN }
 @export var lowbeam_r_node: NodePath
 @export var highbeam_l_node: NodePath
 @export var highbeam_r_node: NodePath
+@export var audio_stream_player_node: NodePath
 
 var lowbeam_l: SpotLight3D
 var lowbeam_r: SpotLight3D
 var highbeam_l: SpotLight3D
 var highbeam_r: SpotLight3D
+var audio_stream_player: AudioStreamPlayer3D
 
 var light_mode: LIGHT_MODES
 var body_mesh: MeshInstance3D
@@ -26,6 +28,7 @@ func _ready():
 	lowbeam_r = get_node(lowbeam_r_node) as SpotLight3D
 	highbeam_l = get_node(highbeam_l_node) as SpotLight3D
 	highbeam_r = get_node(highbeam_r_node) as SpotLight3D
+	audio_stream_player = get_node(audio_stream_player_node) as AudioStreamPlayer3D
 	
 	# Set light mode to OFF
 	light_mode = LIGHT_MODES.OFF
@@ -61,9 +64,11 @@ func high_beam_toggle() -> void:
 
 func _input(event):
 	if event.is_action_pressed("LightsToggle"):
+		SoundManager.play_light_switch_toggle(audio_stream_player)
 		toggle()
 	
 	if event.is_action_pressed("HighBeamToggle"):
+		SoundManager.play_light_switch_toggle(audio_stream_player)
 		high_beam_toggle()
 
 

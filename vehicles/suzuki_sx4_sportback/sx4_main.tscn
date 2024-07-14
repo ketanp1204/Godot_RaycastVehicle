@@ -60,6 +60,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92172, 0.132569, -0.020526
 [node name="Internal_Handle" parent="Door_FL" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484, 0.153, 0.173)
 
+[node name="AudioStreamPlayer3D" parent="Door_FL" index="3"]
+volume_db = -15.0
+
 [node name="Door_FR" parent="." instance=ExtResource("2_nkd08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773, 0.816, 0.89)
 open_anim_play_delay = 0.1
@@ -71,6 +74,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.919763, 0.136131, 0.011982
 
 [node name="Internal_Handle" parent="Door_FR" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483771, 0.153475, -0.172716)
+
+[node name="AudioStreamPlayer3D" parent="Door_FR" index="3"]
+volume_db = -15.0
 
 [node name="Door_RL" parent="." instance=ExtResource("2_nkd08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307, 0.853, -0.913)
@@ -85,6 +91,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825306, 0.150342, 0.024612
 [node name="Internal_Handle" parent="Door_RL" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353, 0.199, 0.222)
 
+[node name="AudioStreamPlayer3D" parent="Door_RL" index="3"]
+volume_db = -15.0
+
 [node name="Door_RR" parent="." instance=ExtResource("2_nkd08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307, 0.853, 0.913)
 open_anim_play_delay = 0.1
@@ -96,6 +105,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825568, 0.161506, -0.02745
 
 [node name="Internal_Handle" parent="Door_RR" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352683, 0.199265, -0.222499)
+
+[node name="AudioStreamPlayer3D" parent="Door_RR" index="3"]
+volume_db = -15.0
 
 [node name="Wheel_FL" parent="." instance=ExtResource("3_6qoyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264, 0.847, -0.81)
@@ -169,6 +181,10 @@ transform = Transform3D(-4.37114e-08, -0.0348995, -0.999391, 0, 0.999391, -0.034
 
 [node name="HighBeam_R" parent="Vehicle_4W_Lights" index="3"]
 transform = Transform3D(-4.37114e-08, -0.0348995, -0.999391, 0, 0.999391, -0.0348995, 1, -1.52551e-09, -4.36848e-08, 1.78102, 0.739, 0.624)
+
+[node name="AudioStreamPlayer3D" parent="Vehicle_4W_Lights" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.405979, 1.04573, -0.161335)
+volume_db = -25.0
 
 [node name="CentreOfMassVisual" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)

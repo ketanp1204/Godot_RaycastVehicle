@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bkri80raxtfql"
-path="res://.godot/imported/CarDoor_OpenSound.wav-936fc3fb6a2a7a5a8f2e2b07ed2079e8.sample"
+path="res://.godot/imported/Car_DoorOpen.wav-5b5910319b6df1d3057dd154f9fb41ac.sample"
 
 [deps]
 
-source_file="res://assets/sounds/car/door/CarDoor_OpenSound.wav"
-dest_files=["res://.godot/imported/CarDoor_OpenSound.wav-936fc3fb6a2a7a5a8f2e2b07ed2079e8.sample"]
+source_file="res://assets/sounds/car/door/Car_DoorOpen.wav"
+dest_files=["res://.godot/imported/Car_DoorOpen.wav-5b5910319b6df1d3057dd154f9fb41ac.sample"]
 
 [params]
 

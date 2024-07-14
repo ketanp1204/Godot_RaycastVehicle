@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://djuhrv6jb435e"
-path="res://.godot/imported/CarDoor_CloseSound.wav-74d1d98e5df07ea3db9633a28270c7de.sample"
+path="res://.godot/imported/Car_DoorClose.wav-0ed458f7fba0914daf040af045909b24.sample"
 
 [deps]
 
-source_file="res://assets/sounds/car/door/CarDoor_CloseSound.wav"
-dest_files=["res://.godot/imported/CarDoor_CloseSound.wav-74d1d98e5df07ea3db9633a28270c7de.sample"]
+source_file="res://assets/sounds/car/door/Car_DoorClose.wav"
+dest_files=["res://.godot/imported/Car_DoorClose.wav-0ed458f7fba0914daf040af045909b24.sample"]
 
 [params]
 
