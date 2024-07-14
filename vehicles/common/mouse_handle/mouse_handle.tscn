@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwhrwf2tqh136"]
+
+[ext_resource type="Script" path="res://vehicles/common/mouse_handle/mouse_handle.gd" id="1_7hlgf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4gwh"]
+size = Vector3(0.136719, 0.142822, 0.136719)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lp4h2"]
+transparency = 1
+albedo_color = Color(1, 1, 0.188235, 0.439216)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ugj14"]
+material = SubResource("StandardMaterial3D_lp4h2")
+radius = 0.05
+height = 0.1
+
+[node name="MouseHandle" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_7hlgf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l4gwh")
+
+[node name="Circle" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ugj14")
