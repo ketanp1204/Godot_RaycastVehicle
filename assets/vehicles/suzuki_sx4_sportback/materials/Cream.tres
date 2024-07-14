@@ -1,7 +1,7 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dotpynbaogfm2"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://edpt2eqxvo7h"]
 
 [resource]
 resource_name = "Cream"
 cull_mode = 2
-albedo_color = Color(2.26215e-06, 0.779374, 0.362312, 1)
-roughness = 0.9
+albedo_color = Color(0.998281, 0.994831, 0.912562, 1)
+roughness = 0.5

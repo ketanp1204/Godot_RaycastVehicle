@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c20nl8bpkvosm"]
+
+[ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_switch/vehicle_4W_indicator_switch.gd" id="1_jtrso"]
+
+[node name="Vehicle4wSwitchDummy" type="Node3D"]
+script = ExtResource("1_jtrso")

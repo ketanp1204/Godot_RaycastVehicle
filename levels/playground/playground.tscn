@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://6rba86f3cb4v" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_NRM_2K.jpg" id="5_4kuox"]
 [ext_resource type="Texture2D" uid="uid://dayx1unrgj6x4" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_GLOSS_2K.jpg" id="6_rdfim"]
 [ext_resource type="Material" uid="uid://b5l86vtwlh4a7" path="res://assets/materials/concrete_mat.tres" id="7_q4euk"]
-[ext_resource type="PackedScene" uid="uid://dq8g4agyc26qt" path="res://vehicles/suzuki_sx4_sportback/sx4_main.tscn" id="8_bvxs2"]
+[ext_resource type="PackedScene" uid="uid://bx0ttm8puvpw4" path="res://vehicles/suzuki_sx4_sportback/sx4_sportback_main.tscn" id="8_432nu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv6o5"]
 sky_top_color = Color(0.38928, 0.448142, 0.573553, 1)
@@ -80,5 +80,5 @@ surface_material_override/0 = ExtResource("7_q4euk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_v0b23")
 
-[node name="Suzuki_SX4_Sportback" parent="." instance=ExtResource("8_bvxs2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885546, -8.3597)
+[node name="Suzuki_SX4_Sportback" parent="." instance=ExtResource("8_432nu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.990344, -9.99333)

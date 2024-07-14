@@ -1,6 +1,6 @@
 extends Node3D
-
-enum LIGHT_MODES { OFF, PARK, MAIN }
+signal light_mode_changed(mode: GlobalEnums.LIGHT_MODES)
+signal high_beam_changed(high_beam: bool)
 
 @export_category("References")
 @export var lowbeam_l_node: NodePath
@@ -15,7 +15,7 @@ var highbeam_l: SpotLight3D
 var highbeam_r: SpotLight3D
 var audio_stream_player: AudioStreamPlayer3D
 
-var light_mode: LIGHT_MODES
+var light_mode: GlobalEnums.LIGHT_MODES
 var body_mesh: MeshInstance3D
 var headlight_material: Material
 
@@ -31,35 +31,40 @@ func _ready():
 	audio_stream_player = get_node(audio_stream_player_node) as AudioStreamPlayer3D
 	
 	# Set light mode to OFF
-	light_mode = LIGHT_MODES.OFF
+	light_mode = GlobalEnums.LIGHT_MODES.OFF
 
 
 func toggle() -> void:
 	
-	if light_mode == LIGHT_MODES.OFF:
+	if light_mode == GlobalEnums.LIGHT_MODES.OFF:
 		headlight_material.emission_enabled = true
 		headlight_material.emission_energy_multiplier = 1
 		visible = false
-		light_mode = LIGHT_MODES.PARK
-	elif light_mode == LIGHT_MODES.PARK:
+		light_mode = GlobalEnums.LIGHT_MODES.PARK
+		light_mode_changed.emit(light_mode)
+	elif light_mode == GlobalEnums.LIGHT_MODES.PARK:
 		headlight_material.emission_enabled = true
 		headlight_material.emission_energy_multiplier = 10
 		visible = true
-		light_mode = LIGHT_MODES.MAIN
-	elif light_mode == LIGHT_MODES.MAIN:
+		light_mode = GlobalEnums.LIGHT_MODES.MAIN
+		light_mode_changed.emit(light_mode)
+	elif light_mode == GlobalEnums.LIGHT_MODES.MAIN:
 		headlight_material.emission_enabled = false
 		headlight_material.emission_energy_multiplier = 1
 		visible = false
-		light_mode = LIGHT_MODES.OFF
+		light_mode = GlobalEnums.LIGHT_MODES.OFF
+		light_mode_changed.emit(light_mode)
 
 
 func high_beam_toggle() -> void:
 	if highbeam_l.visible:
 		highbeam_l.visible = false
 		highbeam_r.visible = false
+		high_beam_changed.emit(false)
 	else:
 		highbeam_l.visible = true
 		highbeam_r.visible = true
+		high_beam_changed.emit(true)
 
 
 func _input(event):

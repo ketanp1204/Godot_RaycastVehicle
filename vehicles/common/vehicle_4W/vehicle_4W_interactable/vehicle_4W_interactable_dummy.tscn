@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://01lj85vn1ovp"]
+
+[ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_interactable/vehicle_4W_interactable.gd" id="1_t8x0t"]
+
+[node name="Vehicle_4W_Interactable_DummyScene" type="Node3D"]
+script = ExtResource("1_t8x0t")

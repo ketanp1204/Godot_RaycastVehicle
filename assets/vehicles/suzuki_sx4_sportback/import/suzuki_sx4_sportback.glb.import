@@ -1,0 +1,285 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://hdbuc6abrt7t"
+path="res://.godot/imported/suzuki_sx4_sportback.glb-8718f691c2383bb205c6dca6e495a894.scn"
+
+[deps]
+
+source_file="res://assets/vehicles/suzuki_sx4_sportback/import/suzuki_sx4_sportback.glb"
+dest_files=["res://.godot/imported/suzuki_sx4_sportback.glb-8718f691c2383bb205c6dca6e495a894.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Biege": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/Biege.tres"
+},
+"Buttons": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/Buttons.tres"
+},
+"CarPaint": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/CarPaint.tres"
+},
+"Cream": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/Cream.tres"
+},
+"Glass": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/Glass.tres"
+},
+"IndicatorLights": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/IndicatorLights.tres"
+},
+"LightReflector": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/LightReflector.tres"
+},
+"LightReflectorRed": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/LightReflectorRed.tres"
+},
+"MetallicSilver": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/MetallicSilver.tres"
+},
+"Plastic": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/Plastic.tres"
+},
+"ReverseLight": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/ReverseLight.tres"
+},
+"Rims": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/Rims.tres"
+},
+"RoughBlack": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/RoughBlack.tres"
+},
+"RoughSilver": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/RoughSilver.tres"
+},
+"SeatsTone1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/SeatsTone1.tres"
+},
+"SeatsTone2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/SeatsTone2.tres"
+},
+"ShinyBlack": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/ShinyBlack.tres"
+},
+"TailLightRed": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/TailLightRed.tres"
+},
+"Tire": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/vehicles/suzuki_sx4_sportback/materials/Tire.tres"
+}
+},
+"meshes": {
+"suzuki_sx4_sportback_Bonnet_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Bonnet_Mesh.res"
+},
+"suzuki_sx4_sportback_Boot_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Boot_Mesh.res"
+},
+"suzuki_sx4_sportback_Car_Body": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Car_Body.res"
+},
+"suzuki_sx4_sportback_Door_FL_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Door_FL_Mesh.res"
+},
+"suzuki_sx4_sportback_Door_FR_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Door_FR_Mesh.res"
+},
+"suzuki_sx4_sportback_Door_RL_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Door_RL_Mesh.res"
+},
+"suzuki_sx4_sportback_Door_RR_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Door_RR_Mesh.res"
+},
+"suzuki_sx4_sportback_Gear_Stick_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Gear_Stick_Mesh.res"
+},
+"suzuki_sx4_sportback_Ignition_Key_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Ignition_Key_Mesh.res"
+},
+"suzuki_sx4_sportback_Indicator_Switch_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Indicator_Switch_Mesh.res"
+},
+"suzuki_sx4_sportback_Light_Switch_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Light_Switch_Mesh.res"
+},
+"suzuki_sx4_sportback_Steering_Wheel_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Steering_Wheel_Mesh.res"
+},
+"suzuki_sx4_sportback_W_Wiper_L_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_W_Wiper_L_Mesh.res"
+},
+"suzuki_sx4_sportback_W_Wiper_R_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_W_Wiper_R_Mesh.res"
+},
+"suzuki_sx4_sportback_Wheel_L_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Wheel_L_Mesh.res"
+},
+"suzuki_sx4_sportback_Wheel_R_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Wheel_R_Mesh.res"
+},
+"suzuki_sx4_sportback_Wiper_Switch_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Wiper_Switch_Mesh.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

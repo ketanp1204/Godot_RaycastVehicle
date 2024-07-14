@@ -32,7 +32,6 @@ var wheel_meshes: Array[MeshInstance3D]
 
 
 ########## STEERING ##########
-
 @export_category("Steering")
 @export var max_steering_angle: float = 35.0
 @export var max_steering_wheel_angle: float = 220.0
@@ -40,6 +39,11 @@ var steering_wheel: Node3D
 var steer_input: float = 0.0
 var steer_angle: float = 0.0
 var steer_angle_normalized: float = 0.0
+
+
+########## LIGHTS ##########
+@export_category("Lights")
+@export var headlight_mat_index: int
 
 
 
@@ -78,8 +82,8 @@ func _ready():
 	for i in range(4):
 		wheel_meshes[i].position = Vector3(0.0, -wheels[i].rest_length, 0.0)
 	
-	# Pass the body mesh and headlight index to the Lights node
-	lights.set_mesh_and_material_index(car_body_mesh, 4)
+	# Pass the body mesh and headlight material index to the Lights node
+	lights.set_mesh_and_material_index(car_body_mesh, headlight_mat_index)
 	
 	# Set the mesh of the MeshInstance3D if not set
 	if car_body_mesh.mesh == null:
