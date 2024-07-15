@@ -4,8 +4,6 @@
 
 [node name="Vehicle_Cameras" type="Node3D"]
 script = ExtResource("1_gwy3s")
-camera_nodes = Array[NodePath]([NodePath("SpringArm_Internal/Camera_Internal"), NodePath("SpringArm_Chasing/Camera_Chasing")])
-spring_arm_default_rotations = Array[Vector3]([Vector3(0, -90, 0), Vector3(-10, -90, 0)])
 default_camera_node = NodePath("SpringArm_Chasing/Camera_Chasing")
 
 [node name="SpringArm_Chasing" type="SpringArm3D" parent="."]

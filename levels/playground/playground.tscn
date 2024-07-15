@@ -54,8 +54,6 @@ data = PackedVector3Array(15, 0, 15, -15, 0, 15, 15, 0, -15, -15, 0, 15, -15, 0,
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(-0.866025, -0.0825238, 0.493143, 0, 0.986286, 0.165048, -0.5, 0.142935, -0.854148, 0, 0, 0)
-visible = false
-light_energy = 0.664
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]

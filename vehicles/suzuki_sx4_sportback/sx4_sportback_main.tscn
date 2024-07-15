@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bx0ttm8puvpw4"]
+[gd_scene load_steps=30 format=3 uid="uid://bx0ttm8puvpw4"]
 
 [ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_uek13"]
 [ext_resource type="ArrayMesh" uid="uid://okvcll0etrt2" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Car_Body.res" id="2_ndope"]
@@ -25,9 +25,32 @@
 [ext_resource type="ArrayMesh" uid="uid://dsdxqvitasida" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Steering_Wheel_Mesh.res" id="15_xj5aa"]
 [ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://vehicles/common/cameras/vehicle_cameras.tscn" id="16_gl12x"]
 [ext_resource type="PackedScene" uid="uid://br53hfa2kgmu0" path="res://vehicles/common/vehicle_4W/vehicle_4W_lights/vehicle_4W_lights.tscn" id="17_j0s02"]
+[ext_resource type="Script" path="res://resources/camera/spring_arm_data.gd" id="25_yeceg"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n7wwq"]
 points = PackedVector3Array(-1.87563, 0.461188, -0.963872, 1.78182, 0.179734, -0.893411, -0.960829, 1.65689, -0.682398, -1.87563, 0.320375, 0.935428, -1.49934, 1.61777, 0.548498, 1.79467, 0.234141, 0.805832, 1.99289, 0.953516, -0.119636, -1.45348, 0.109328, 0.653954, 0.149127, 1.58727, 0.584336, 1.78182, 0.953516, -0.823135, -1.9457, 1.30486, -0.541475, 1.78182, 0.953516, 0.794691, -2.15677, 0.812876, 0.653954, -1.45348, 1.09381, 0.935428, -1.9457, 0.250141, -0.823135, -1.45348, 1.86794, 0.0209156, 0.208762, 1.57609, -0.539662, 2.19973, 0.274664, 0.359818, 1.78182, 0.390953, 0.935428, -1.24241, 0.953516, -0.963872, -2.14668, 0.412189, -0.455015, 1.71131, 0.461188, -0.963872, 2.19071, 0.277624, -0.386712, 1.29431, 0.152344, 0.621266, -1.10184, 1.58649, 0.724229, -1.9457, 1.30486, 0.513031, -1.9457, 0.250141, 0.794691, -1.80513, 0.179734, -0.330648, 2.1873, 0.616808, 0.154663, -1.83975, 1.08815, -0.779615, 0.270067, 1.5754, 0.387192, -1.47846, 1.60914, -0.569225)
+
+[sub_resource type="Resource" id="Resource_7ho13"]
+script = ExtResource("25_yeceg")
+name = "SpringArm_Internal"
+initial_position = Vector3(0, 1.3, -0.35)
+default_rotation = Vector3(0, -90, 0)
+spring_length = 0.1
+zoom_delta = 0.05
+zoom_min = -0.1
+zoom_max = 0.1
+zoom_interp_speed = 15.0
+
+[sub_resource type="Resource" id="Resource_73twl"]
+script = ExtResource("25_yeceg")
+name = "SpringArm_Chasing"
+initial_position = Vector3(0, 1.23505, 0)
+default_rotation = Vector3(-10, -90, 0)
+spring_length = 4.5
+zoom_delta = 0.5
+zoom_min = 3.0
+zoom_max = 6.0
+zoom_interp_speed = 15.0
 
 [node name="Suzuki_SX4_Sportback" type="RigidBody3D"]
 mass = 126.53
@@ -241,9 +264,11 @@ damper_stiffness = 50.0
 wheel_mesh_resource = ExtResource("10_kckn4")
 
 [node name="Vehicle_Cameras" parent="." instance=ExtResource("16_gl12x")]
+spring_arm_nodes = Array[NodePath]([NodePath("SpringArm_Internal"), NodePath("SpringArm_Chasing")])
+spring_arms_data = Array[ExtResource("25_yeceg")]([SubResource("Resource_7ho13"), SubResource("Resource_73twl")])
 
 [node name="SpringArm_Internal" parent="Vehicle_Cameras" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00192022, 1.27599, -0.357267)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.3, -0.35)
 
 [node name="Vehicle_4W_Lights" parent="." instance=ExtResource("17_j0s02")]
 
