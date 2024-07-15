@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bx0ttm8puvpw4"]
+[gd_scene load_steps=31 format=3 uid="uid://bx0ttm8puvpw4"]
 
 [ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_uek13"]
 [ext_resource type="ArrayMesh" uid="uid://okvcll0etrt2" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Car_Body.res" id="2_ndope"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_interactable/vehicle_4W_interactable.gd" id="11_sh02f"]
 [ext_resource type="ArrayMesh" uid="uid://brekj3dc8pmvb" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Bonnet_Mesh.res" id="12_d8aic"]
 [ext_resource type="ArrayMesh" uid="uid://b7beymroxugmt" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Wiper_Switch_Mesh.res" id="12_kjlrb"]
+[ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_wiper/vehicle_4W_wiper.gd" id="13_70hku"]
 [ext_resource type="PackedScene" uid="uid://cwhrwf2tqh136" path="res://vehicles/common/mouse_handle/mouse_handle.tscn" id="13_qcubm"]
 [ext_resource type="ArrayMesh" uid="uid://cddakty2rh0ly" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Boot_Mesh.res" id="14_8gvvl"]
 [ext_resource type="ArrayMesh" uid="uid://dsdxqvitasida" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Steering_Wheel_Mesh.res" id="15_xj5aa"]
@@ -153,9 +154,14 @@ mesh = ExtResource("15_xj5aa")
 skeleton = NodePath("")
 
 [node name="Windshield_Wipers" type="Node3D" parent="Car_Body"]
+script = ExtResource("13_70hku")
+wiper_l_node = NodePath("W_Wiper_L_Mesh")
+wiper_r_node = NodePath("W_Wiper_R_Mesh")
+mouse_handle_node = NodePath("Handle")
+wiper_r_max_rotate_angle = 40.0
 
 [node name="W_Wiper_L_Mesh" type="MeshInstance3D" parent="Car_Body/Windshield_Wipers"]
-transform = Transform3D(0.00381231, 0.443775, -0.89613, -0.0492308, 0.895133, 0.443072, 0.99878, 0.042428, 0.0252599, 1.14272, 1.06474, -0.63711)
+transform = Transform3D(0.00381229, 0.443775, -0.89613, -0.0492308, 0.895133, 0.443072, 0.99878, 0.0424281, 0.0252599, 1.14272, 1.06474, -0.63711)
 mesh = ExtResource("10_7oh25")
 skeleton = NodePath("")
 
@@ -163,6 +169,9 @@ skeleton = NodePath("")
 transform = Transform3D(0.0108702, 0.652298, -0.757885, 0.193365, 0.742252, 0.641617, 0.981067, -0.153523, -0.118063, 1.19971, 1.08408, -0.266407)
 mesh = ExtResource("11_6khj2")
 skeleton = NodePath("")
+
+[node name="Handle" parent="Car_Body/Windshield_Wipers" instance=ExtResource("13_qcubm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08474, 1.09011, -0.664522)
 
 [node name="Wiper_Switch" type="Node3D" parent="Car_Body"]
 transform = Transform3D(0.899562, 0.168273, -0.40308, -0.0615001, 0.962415, 0.264526, 0.432443, -0.213168, 0.876101, 0.457367, 1.01354, -0.265625)

@@ -25,9 +25,6 @@ var wiper_move_state: WIPER_MOVE_STATE
 
 var from_angle: float = 0.0
 var anim_length: float
-var current_tween: Tween
-var is_first_tween_step: bool = true
-var tween_timer: float = 0.0
 var delay: float = 0.0 
 var stop_animation: bool = false
 var loop_rotation: bool = false

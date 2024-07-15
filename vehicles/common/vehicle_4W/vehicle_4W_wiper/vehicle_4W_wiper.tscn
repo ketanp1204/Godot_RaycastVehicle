@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c70bvjnw555ah"]
+
+[ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_wiper/vehicle_4W_wiper.gd" id="1_xwgoa"]
+
+[node name="Vehicle_4W_Wiper" type="Node3D"]
+script = ExtResource("1_xwgoa")
