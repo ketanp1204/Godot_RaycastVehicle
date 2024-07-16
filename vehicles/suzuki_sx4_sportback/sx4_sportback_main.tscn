@@ -30,7 +30,7 @@
 
 [sub_resource type="Animation" id="Animation_ljpu4"]
 resource_name = "wiper_continuous_mode"
-length = 1.4
+length = 1.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,7 +39,7 @@ tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4),
+"times": PackedFloat32Array(0, 0.9, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459022, -1.54262, -0.054943)]
@@ -51,7 +51,7 @@ tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4),
+"times": PackedFloat32Array(0, 0.9, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847)]
@@ -63,7 +63,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
+"times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [2],
@@ -90,7 +90,6 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_0sm4q"]
 resource_name = "wiper_rapid_mdoe"
-length = 0.9
 loop_mode = 1
 step = 0.05
 tracks/0/type = "value"
@@ -100,7 +99,7 @@ tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.45, 0.9),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459022, -1.54262, -0.054943)]
@@ -112,7 +111,7 @@ tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.45, 0.9),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847)]
@@ -124,7 +123,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.45),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [2],
@@ -151,7 +150,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_u2wsc"]
 resource_name = "wipers_towards_max"
-length = 3.4
+length = 3.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -160,7 +159,7 @@ tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4, 3.4),
+"times": PackedFloat32Array(0, 0.9, 1.8, 3.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.459023, -1.54262, -0.0549429)]
@@ -172,7 +171,7 @@ tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4, 3.4),
+"times": PackedFloat32Array(0, 0.9, 1.8, 3.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.696604, -1.72533, 0.254847)]
@@ -184,7 +183,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4),
+"times": PackedFloat32Array(0, 0.9, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [2],
@@ -218,7 +217,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.4),
+"times": PackedFloat32Array(1.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -228,7 +227,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_8vr87"]
 resource_name = "wiper_rapid_to_off_mode"
-length = 1.4
+length = 1.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -236,7 +235,7 @@ tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4),
+"times": PackedFloat32Array(0, 0.9, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459022, -1.54262, -0.054943)]
@@ -248,7 +247,7 @@ tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4),
+"times": PackedFloat32Array(0, 0.9, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847)]
@@ -260,7 +259,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
+"times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [2],
@@ -291,7 +290,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.4),
+"times": PackedFloat32Array(1.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
