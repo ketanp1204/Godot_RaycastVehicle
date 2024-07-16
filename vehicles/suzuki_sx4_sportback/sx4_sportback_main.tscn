@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bx0ttm8puvpw4"]
+[gd_scene load_steps=36 format=3 uid="uid://bx0ttm8puvpw4"]
 
 [ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_uek13"]
 [ext_resource type="ArrayMesh" uid="uid://okvcll0etrt2" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Car_Body.res" id="2_ndope"]
@@ -27,6 +27,285 @@
 [ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://vehicles/common/cameras/vehicle_cameras.tscn" id="16_gl12x"]
 [ext_resource type="PackedScene" uid="uid://br53hfa2kgmu0" path="res://vehicles/common/vehicle_4W/vehicle_4W_lights/vehicle_4W_lights.tscn" id="17_j0s02"]
 [ext_resource type="Script" path="res://resources/camera/spring_arm_data.gd" id="25_yeceg"]
+
+[sub_resource type="Animation" id="Animation_ljpu4"]
+resource_name = "wiper_continuous_mode"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459022, -1.54262, -0.054943)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [2],
+"method": &"set_wiper_move_state"
+}, {
+"args": [3],
+"method": &"set_wiper_move_state"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [2],
+"method": &"set_wiper_mode"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0sm4q"]
+resource_name = "wiper_rapid_mdoe"
+length = 0.9
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459022, -1.54262, -0.054943)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [2],
+"method": &"set_wiper_move_state"
+}, {
+"args": [3],
+"method": &"set_wiper_move_state"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [3],
+"method": &"set_wiper_mode"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_u2wsc"]
+resource_name = "wipers_towards_max"
+length = 3.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.459023, -1.54262, -0.0549429)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.696604, -1.72533, 0.254847)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [2],
+"method": &"set_wiper_move_state"
+}, {
+"args": [3],
+"method": &"set_wiper_move_state"
+}, {
+"args": [1],
+"method": &"set_wiper_move_state"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1],
+"method": &"set_wiper_mode"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"wiper_entererd_restart_delay_state"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8vr87"]
+resource_name = "wiper_rapid_to_off_mode"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459022, -1.54262, -0.054943)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [2],
+"method": &"set_wiper_move_state"
+}, {
+"args": [3],
+"method": &"set_wiper_move_state"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [4],
+"method": &"set_wiper_mode"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"wiper_rapid_to_off_finished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5tfma"]
+_data = {
+"wiper_continuous_mode": SubResource("Animation_ljpu4"),
+"wiper_rapid_mode": SubResource("Animation_0sm4q"),
+"wiper_rapid_to_off_mode": SubResource("Animation_8vr87"),
+"wiper_single_mode": SubResource("Animation_u2wsc")
+}
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n7wwq"]
 points = PackedVector3Array(-1.87563, 0.461188, -0.963872, 1.78182, 0.179734, -0.893411, -0.960829, 1.65689, -0.682398, -1.87563, 0.320375, 0.935428, -1.49934, 1.61777, 0.548498, 1.79467, 0.234141, 0.805832, 1.99289, 0.953516, -0.119636, -1.45348, 0.109328, 0.653954, 0.149127, 1.58727, 0.584336, 1.78182, 0.953516, -0.823135, -1.9457, 1.30486, -0.541475, 1.78182, 0.953516, 0.794691, -2.15677, 0.812876, 0.653954, -1.45348, 1.09381, 0.935428, -1.9457, 0.250141, -0.823135, -1.45348, 1.86794, 0.0209156, 0.208762, 1.57609, -0.539662, 2.19973, 0.274664, 0.359818, 1.78182, 0.390953, 0.935428, -1.24241, 0.953516, -0.963872, -2.14668, 0.412189, -0.455015, 1.71131, 0.461188, -0.963872, 2.19071, 0.277624, -0.386712, 1.29431, 0.152344, 0.621266, -1.10184, 1.58649, 0.724229, -1.9457, 1.30486, 0.513031, -1.9457, 0.250141, 0.794691, -1.80513, 0.179734, -0.330648, 2.1873, 0.616808, 0.154663, -1.83975, 1.08815, -0.779615, 0.270067, 1.5754, 0.387192, -1.47846, 1.60914, -0.569225)
@@ -155,23 +434,22 @@ skeleton = NodePath("")
 
 [node name="Windshield_Wipers" type="Node3D" parent="Car_Body"]
 script = ExtResource("13_70hku")
-wiper_l_node = NodePath("W_Wiper_L_Mesh")
-wiper_r_node = NodePath("W_Wiper_R_Mesh")
-mouse_handle_node = NodePath("Handle")
-wiper_r_max_rotate_angle = 40.0
+anim_player_node = NodePath("AnimationPlayer")
 
 [node name="W_Wiper_L_Mesh" type="MeshInstance3D" parent="Car_Body/Windshield_Wipers"]
-transform = Transform3D(0.00381229, 0.443775, -0.89613, -0.0492308, 0.895133, 0.443072, 0.99878, 0.0424281, 0.0252599, 1.14272, 1.06474, -0.63711)
+transform = Transform3D(0.00380837, 0.443774, -0.89613, -0.0492309, 0.895133, 0.443071, 0.99878, 0.0424299, 0.0252564, 1.14272, 1.06474, -0.63711)
 mesh = ExtResource("10_7oh25")
 skeleton = NodePath("")
 
 [node name="W_Wiper_R_Mesh" type="MeshInstance3D" parent="Car_Body/Windshield_Wipers"]
-transform = Transform3D(0.0108702, 0.652298, -0.757885, 0.193365, 0.742252, 0.641617, 0.981067, -0.153523, -0.118063, 1.19971, 1.08408, -0.266407)
+transform = Transform3D(0.0108743, 0.652297, -0.757886, 0.193365, 0.742252, 0.641617, 0.981067, -0.153526, -0.11806, 1.19971, 1.08408, -0.266407)
 mesh = ExtResource("11_6khj2")
 skeleton = NodePath("")
 
-[node name="Handle" parent="Car_Body/Windshield_Wipers" instance=ExtResource("13_qcubm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08474, 1.09011, -0.664522)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Car_Body/Windshield_Wipers"]
+libraries = {
+"": SubResource("AnimationLibrary_5tfma")
+}
 
 [node name="Wiper_Switch" type="Node3D" parent="Car_Body"]
 transform = Transform3D(0.899562, 0.168273, -0.40308, -0.0615001, 0.962415, 0.264526, 0.432443, -0.213168, 0.876101, 0.457367, 1.01354, -0.265625)

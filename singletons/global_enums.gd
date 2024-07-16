@@ -1,18 +1,45 @@
 extends Node
 
 ########## INTERACTABLE ##########
-enum ROTATION_AXIS { X, Y, Z}
+enum ROTATION_AXIS { 
+	X, 
+	Y, 
+	Z}
 
 
 ########## CAMERA ##########
-enum CAMERAS { INTERNAL, CHASING }
+enum CAMERAS { 
+	INTERNAL, 
+	CHASING }
 
 
 ########## INDICATORS ##########
-enum INDICATOR_MODE { OFF, LEFT, RIGHT }
+enum INDICATOR_MODE { 
+	OFF, 
+	LEFT, 
+	RIGHT }
 
 
 ########## LIGHTS ##########
-enum LIGHT_MODES { OFF, PARK, MAIN }
+enum LIGHT_MODES { 
+	OFF, 
+	PARK, 
+	MAIN }
+
+
+########## WIPERS ##########
+enum WIPER_MODE { 
+	OFF, 
+	SINGLE, 
+	CONTINUOUS, 
+	RAPID,
+	RAPID_TO_OFF}
+enum WIPER_MOVE_STATE { 
+	OFF, 
+	RESTART_DELAY, 
+	TOWARDS_MAX, 
+	TOWARDS_ZERO, 
+	CURRENT_TOWARDS_MAX, 
+	CURRENT_TOWARDS_ZERO }
 
 

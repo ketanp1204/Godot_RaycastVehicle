@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cl5rmt1ag4b7n"]
+[gd_scene load_steps=13 format=3 uid="uid://cl5rmt1ag4b7n"]
 
 [ext_resource type="Texture2D" uid="uid://dbca2hyap8kge" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_COL_2K.jpg" id="1_4cxxe"]
 [ext_resource type="Texture2D" uid="uid://b04fyujtm0lqp" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_AO_2K.jpg" id="2_au1l1"]
@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://6rba86f3cb4v" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_NRM_2K.jpg" id="5_upsnx"]
 [ext_resource type="Texture2D" uid="uid://dayx1unrgj6x4" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_GLOSS_2K.jpg" id="6_flhil"]
 [ext_resource type="ArrayMesh" uid="uid://brekj3dc8pmvb" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Bonnet_Mesh.res" id="7_2osqt"]
-[ext_resource type="Script" path="res://levels/test/test_rotation.gd" id="8_grjay"]
-[ext_resource type="ArrayMesh" uid="uid://c165u8xyymw8r" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_W_Wiper_L_Mesh.res" id="8_ibqia"]
-[ext_resource type="ArrayMesh" uid="uid://2vfa053yc082" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_W_Wiper_R_Mesh.res" id="10_fnkw1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rrmpo"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -43,7 +40,7 @@ uv1_scale = Vector3(50, 50, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_01tm0"]
 size = Vector2(50, 50)
 
-[node name="TestScene" type="Node3D"]
+[node name="FeatureTestScene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_10vr7")
@@ -62,19 +59,4 @@ visible = false
 mesh = ExtResource("7_2osqt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.0461952, -0.620455, 0.78288, 0, 0.783717, 0.621118, -0.998932, 0.0286927, -0.036204, 1.60047, 1.80149, -0.180303)
-
-[node name="Windshield_Wipers" type="Node3D" parent="."]
-
-[node name="W_Wiper_L_Mesh" type="MeshInstance3D" parent="Windshield_Wipers"]
-transform = Transform3D(0.00381231, 0.443775, -0.89613, -0.0492308, 0.895133, 0.443072, 0.99878, 0.042428, 0.0252599, 1.14272, 1.06474, -0.63711)
-mesh = ExtResource("8_ibqia")
-skeleton = NodePath("")
-script = ExtResource("8_grjay")
-high_rotation_speed = 3.0
-
-[node name="W_Wiper_R_Mesh" type="MeshInstance3D" parent="Windshield_Wipers"]
-transform = Transform3D(0.0108702, 0.652298, -0.757885, 0.193365, 0.742252, 0.641617, 0.981067, -0.153523, -0.118063, 1.19971, 1.08408, -0.266407)
-visible = false
-mesh = ExtResource("10_fnkw1")
-skeleton = NodePath("")
+transform = Transform3D(-0.846677, 0.165735, -0.505638, 0, 0.950256, 0.311469, 0.532107, 0.263714, -0.80456, -0.88009, 1.21458, -2.14083)
