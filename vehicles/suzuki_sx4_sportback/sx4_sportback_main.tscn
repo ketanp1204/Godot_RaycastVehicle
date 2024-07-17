@@ -688,7 +688,6 @@ libraries = {
 
 [node name="Steering_Wheel" type="Node3D" parent="Car_Body"]
 transform = Transform3D(0.898794, 0.438371, 0, -0.438371, 0.898794, 0, 0, 0, 1, 0.31013, 1.06112, -0.35556)
-visible = false
 
 [node name="Steering_Wheel_Mesh" type="MeshInstance3D" parent="Car_Body/Steering_Wheel"]
 mesh = ExtResource("15_xj5aa")
@@ -716,6 +715,7 @@ libraries = {
 [node name="Wiper_Switch" type="Node3D" parent="Car_Body"]
 transform = Transform3D(0.899562, 0.168273, -0.40308, -0.0615001, 0.962415, 0.264526, 0.432443, -0.213168, 0.876101, 0.457367, 1.01354, -0.265625)
 script = ExtResource("16_d03dk")
+audio_stream_player_node = NodePath("AudioStreamPlayer3D")
 anim_player_node = NodePath("AnimationPlayer")
 
 [node name="Wiper_Switch_Mesh" type="MeshInstance3D" parent="Car_Body/Wiper_Switch"]
@@ -727,6 +727,9 @@ skeleton = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_olffn")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Car_Body/Wiper_Switch"]
+transform = Transform3D(0.999999, -3.72529e-07, 5.96046e-08, -7.45058e-09, 1, 4.02331e-07, 0, 0, 1, 0, 1.19209e-07, 0.0528258)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_n7wwq")
