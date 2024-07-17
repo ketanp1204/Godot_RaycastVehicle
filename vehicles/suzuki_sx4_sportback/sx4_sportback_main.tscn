@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bx0ttm8puvpw4"]
+[gd_scene load_steps=54 format=3 uid="uid://bx0ttm8puvpw4"]
 
 [ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_uek13"]
 [ext_resource type="ArrayMesh" uid="uid://okvcll0etrt2" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Car_Body.res" id="2_ndope"]
@@ -24,57 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://cwhrwf2tqh136" path="res://vehicles/common/mouse_handle/mouse_handle.tscn" id="13_qcubm"]
 [ext_resource type="ArrayMesh" uid="uid://cddakty2rh0ly" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Boot_Mesh.res" id="14_8gvvl"]
 [ext_resource type="ArrayMesh" uid="uid://dsdxqvitasida" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Steering_Wheel_Mesh.res" id="15_xj5aa"]
+[ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_switch/vehicle_4W_wiper_switch.gd" id="16_d03dk"]
 [ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://vehicles/common/cameras/vehicle_cameras.tscn" id="16_gl12x"]
 [ext_resource type="PackedScene" uid="uid://br53hfa2kgmu0" path="res://vehicles/common/vehicle_4W/vehicle_4W_lights/vehicle_4W_lights.tscn" id="17_j0s02"]
 [ext_resource type="Script" path="res://resources/camera/spring_arm_data.gd" id="25_yeceg"]
-
-[sub_resource type="Animation" id="Animation_38uru"]
-resource_name = "light_off_to_park"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.54785, -0.056292, 0.0352501), Vector3(-0.897099, -0.0558505, 0.0349066)]
-}
-
-[sub_resource type="Animation" id="Animation_y6pd3"]
-resource_name = "light_park_to_main"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1.07163, -0.0558505, 0.0349066), Vector3(-1.59523, -0.0558505, 0.0349066)]
-}
-
-[sub_resource type="Animation" id="Animation_d0q42"]
-resource_name = "light_main_to_off"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1.59523, -0.0558505, 0.0349066), Vector3(-0.548033, -0.0558505, 0.0349066)]
-}
 
 [sub_resource type="Animation" id="Animation_tdqyp"]
 resource_name = "high_beam_off_to_on"
@@ -106,38 +59,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -0.174533, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_cbnws"]
-resource_name = "indicator_off_to_left"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.261799)]
-}
-
-[sub_resource type="Animation" id="Animation_nhwq5"]
-resource_name = "indicator_off_to_right"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.261799)]
 }
 
 [sub_resource type="Animation" id="Animation_tu6yy"]
@@ -172,8 +93,8 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0.261799), Vector3(0, 0, -0.261799)]
 }
 
-[sub_resource type="Animation" id="Animation_quxaw"]
-resource_name = "indicator_right_to_off"
+[sub_resource type="Animation" id="Animation_cbnws"]
+resource_name = "indicator_off_to_left"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -185,7 +106,23 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -0.261799), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.261799)]
+}
+
+[sub_resource type="Animation" id="Animation_nhwq5"]
+resource_name = "indicator_off_to_right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.261799)]
 }
 
 [sub_resource type="Animation" id="Animation_gxnea"]
@@ -202,6 +139,70 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, -0.261799), Vector3(0, 0, 0.261799)]
+}
+
+[sub_resource type="Animation" id="Animation_quxaw"]
+resource_name = "indicator_right_to_off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.261799), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d0q42"]
+resource_name = "light_main_to_off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.59523, -0.0558505, 0.0349066), Vector3(-0.548033, -0.0558505, 0.0349066)]
+}
+
+[sub_resource type="Animation" id="Animation_38uru"]
+resource_name = "light_off_to_park"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.54785, -0.056292, 0.0352501), Vector3(-0.897099, -0.0558505, 0.0349066)]
+}
+
+[sub_resource type="Animation" id="Animation_y6pd3"]
+resource_name = "light_park_to_main"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.07163, -0.0558505, 0.0349066), Vector3(-1.59523, -0.0558505, 0.0349066)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5ci31"]
@@ -497,6 +498,78 @@ _data = {
 "wiper_single_mode": SubResource("Animation_u2wsc")
 }
 
+[sub_resource type="Animation" id="Animation_7ip8n"]
+resource_name = "wiper_off_to_single"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wiper_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.174533, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i3r1c"]
+resource_name = "wiper_single_to_continuous"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wiper_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.174533, 0, 0), Vector3(0.349066, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o5huk"]
+resource_name = "wiper_continuous_to_rapid"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wiper_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.349066, 0, 0), Vector3(0.523599, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_en323"]
+resource_name = "wiper_rapid_to_off"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wiper_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.523599, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_olffn"]
+_data = {
+"wiper_continuous_to_rapid": SubResource("Animation_o5huk"),
+"wiper_off_to_single": SubResource("Animation_7ip8n"),
+"wiper_rapid_to_off": SubResource("Animation_en323"),
+"wiper_single_to_continuous": SubResource("Animation_i3r1c")
+}
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n7wwq"]
 points = PackedVector3Array(-1.87563, 0.461188, -0.963872, 1.78182, 0.179734, -0.893411, -0.960829, 1.65689, -0.682398, -1.87563, 0.320375, 0.935428, -1.49934, 1.61777, 0.548498, 1.79467, 0.234141, 0.805832, 1.99289, 0.953516, -0.119636, -1.45348, 0.109328, 0.653954, 0.149127, 1.58727, 0.584336, 1.78182, 0.953516, -0.823135, -1.9457, 1.30486, -0.541475, 1.78182, 0.953516, 0.794691, -2.15677, 0.812876, 0.653954, -1.45348, 1.09381, 0.935428, -1.9457, 0.250141, -0.823135, -1.45348, 1.86794, 0.0209156, 0.208762, 1.57609, -0.539662, 2.19973, 0.274664, 0.359818, 1.78182, 0.390953, 0.935428, -1.24241, 0.953516, -0.963872, -2.14668, 0.412189, -0.455015, 1.71131, 0.461188, -0.963872, 2.19071, 0.277624, -0.386712, 1.29431, 0.152344, 0.621266, -1.10184, 1.58649, 0.724229, -1.9457, 1.30486, 0.513031, -1.9457, 0.250141, 0.794691, -1.80513, 0.179734, -0.330648, 2.1873, 0.616808, 0.154663, -1.83975, 1.08815, -0.779615, 0.270067, 1.5754, 0.387192, -1.47846, 1.60914, -0.569225)
 
@@ -642,15 +715,23 @@ libraries = {
 
 [node name="Wiper_Switch" type="Node3D" parent="Car_Body"]
 transform = Transform3D(0.899562, 0.168273, -0.40308, -0.0615001, 0.962415, 0.264526, 0.432443, -0.213168, 0.876101, 0.457367, 1.01354, -0.265625)
+script = ExtResource("16_d03dk")
+anim_player_node = NodePath("AnimationPlayer")
 
 [node name="Wiper_Switch_Mesh" type="MeshInstance3D" parent="Car_Body/Wiper_Switch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("12_kjlrb")
 skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Car_Body/Wiper_Switch"]
+libraries = {
+"": SubResource("AnimationLibrary_olffn")
+}
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_n7wwq")
 
-[node name="Door_FL" parent="." instance=ExtResource("3_v0nl8")]
+[node name="Door_FL" parent="." groups=["Vehicle_4W_Doors"] instance=ExtResource("3_v0nl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773, 0.816, -0.89)
 open_anim_play_delay = 0.1
 is_driver_door = true
@@ -667,7 +748,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484, 0.153, 0.173)
 [node name="AudioStreamPlayer3D" parent="Door_FL" index="3"]
 volume_db = -15.0
 
-[node name="Door_FR" parent="." instance=ExtResource("3_v0nl8")]
+[node name="Door_FR" parent="." groups=["Vehicle_4W_Doors"] instance=ExtResource("3_v0nl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.773, 0.816, 0.89)
 open_anim_play_delay = 0.1
 mesh_res = ExtResource("5_7feho")
@@ -682,7 +763,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483771, 0.153475, -0.17271
 [node name="AudioStreamPlayer3D" parent="Door_FR" index="3"]
 volume_db = -15.0
 
-[node name="Door_RL" parent="." instance=ExtResource("3_v0nl8")]
+[node name="Door_RL" parent="." groups=["Vehicle_4W_Doors"] instance=ExtResource("3_v0nl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307, 0.853, -0.913)
 open_anim_play_delay = 0.1
 mesh_res = ExtResource("6_pfugf")
@@ -698,7 +779,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353, 0.199, 0.222)
 [node name="AudioStreamPlayer3D" parent="Door_RL" index="3"]
 volume_db = -15.0
 
-[node name="Door_RR" parent="." instance=ExtResource("3_v0nl8")]
+[node name="Door_RR" parent="." groups=["Vehicle_4W_Doors"] instance=ExtResource("3_v0nl8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307, 0.853, 0.913)
 open_anim_play_delay = 0.1
 mesh_res = ExtResource("7_bjej4")
@@ -713,27 +794,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352683, 0.199265, -0.22249
 [node name="AudioStreamPlayer3D" parent="Door_RR" index="3"]
 volume_db = -15.0
 
-[node name="Wheel_FL" parent="." instance=ExtResource("8_qdscc")]
+[node name="Wheel_FL" parent="." groups=["Vehicle_4W_Wheels"] instance=ExtResource("8_qdscc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264, 0.847, -0.81)
 spring_stiffness = 5600.0
 damper_stiffness = 50.0
 wheel_mesh_resource = ExtResource("9_4ffuo")
 use_as_steering = true
 
-[node name="Wheel_FR" parent="." instance=ExtResource("8_qdscc")]
+[node name="Wheel_FR" parent="." groups=["Vehicle_4W_Wheels"] instance=ExtResource("8_qdscc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.264, 0.847, 0.81)
 spring_stiffness = 5600.0
 damper_stiffness = 50.0
 wheel_mesh_resource = ExtResource("10_kckn4")
 use_as_steering = true
 
-[node name="Wheel_RL" parent="." instance=ExtResource("8_qdscc")]
+[node name="Wheel_RL" parent="." groups=["Vehicle_4W_Wheels"] instance=ExtResource("8_qdscc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.424, 0.847, -0.81)
 spring_stiffness = 5600.0
 damper_stiffness = 50.0
 wheel_mesh_resource = ExtResource("9_4ffuo")
 
-[node name="Wheel_RR" parent="." instance=ExtResource("8_qdscc")]
+[node name="Wheel_RR" parent="." groups=["Vehicle_4W_Wheels"] instance=ExtResource("8_qdscc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.424, 0.847, 0.81)
 spring_stiffness = 5600.0
 damper_stiffness = 50.0

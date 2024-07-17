@@ -33,13 +33,13 @@ enum HIGH_BEAM_MODES {
 
 
 ########## WIPERS ##########
-enum WIPER_MODE { 
+enum WIPER_MODES { 
 	OFF, 
 	SINGLE, 
 	CONTINUOUS, 
 	RAPID,
 	RAPID_TO_OFF}
-enum WIPER_MOVE_STATE { 
+enum WIPER_MOVE_STATES { 
 	OFF, 
 	RESTART_DELAY, 
 	TOWARDS_MAX, 

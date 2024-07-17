@@ -4,6 +4,11 @@ extends Node
 signal vehicle_light_mode_changed(mode: GlobalEnums.LIGHT_MODES)
 
 
+########## WIPERS ##########
+signal wiper_mode_changed(mode: GlobalEnums.WIPER_MODES)
+signal wiper_single_to_continuous()
+
+
 ########## INPUT ##########
 signal turn_signal_changed(mode: GlobalEnums.INDICATOR_MODES)
 signal high_beam_changed(mode: bool)
