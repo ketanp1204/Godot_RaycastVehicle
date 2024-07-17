@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bx0ttm8puvpw4"]
+[gd_scene load_steps=48 format=3 uid="uid://bx0ttm8puvpw4"]
 
 [ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_uek13"]
 [ext_resource type="ArrayMesh" uid="uid://okvcll0etrt2" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Car_Body.res" id="2_ndope"]
@@ -27,6 +27,197 @@
 [ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://vehicles/common/cameras/vehicle_cameras.tscn" id="16_gl12x"]
 [ext_resource type="PackedScene" uid="uid://br53hfa2kgmu0" path="res://vehicles/common/vehicle_4W/vehicle_4W_lights/vehicle_4W_lights.tscn" id="17_j0s02"]
 [ext_resource type="Script" path="res://resources/camera/spring_arm_data.gd" id="25_yeceg"]
+
+[sub_resource type="Animation" id="Animation_38uru"]
+resource_name = "light_off_to_park"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.54785, -0.056292, 0.0352501), Vector3(-0.897099, -0.0558505, 0.0349066)]
+}
+
+[sub_resource type="Animation" id="Animation_y6pd3"]
+resource_name = "light_park_to_main"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.07163, -0.0558505, 0.0349066), Vector3(-1.59523, -0.0558505, 0.0349066)]
+}
+
+[sub_resource type="Animation" id="Animation_d0q42"]
+resource_name = "light_main_to_off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.59523, -0.0558505, 0.0349066), Vector3(-0.548033, -0.0558505, 0.0349066)]
+}
+
+[sub_resource type="Animation" id="Animation_tdqyp"]
+resource_name = "high_beam_off_to_on"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.174533, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qlgkr"]
+resource_name = "high_beam_on_to_off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.174533, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cbnws"]
+resource_name = "indicator_off_to_left"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.261799)]
+}
+
+[sub_resource type="Animation" id="Animation_nhwq5"]
+resource_name = "indicator_off_to_right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.261799)]
+}
+
+[sub_resource type="Animation" id="Animation_tu6yy"]
+resource_name = "indicator_left_to_off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.261799), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qd8sa"]
+resource_name = "indicator_left_to_right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.261799), Vector3(0, 0, -0.261799)]
+}
+
+[sub_resource type="Animation" id="Animation_quxaw"]
+resource_name = "indicator_right_to_off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.261799), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gxnea"]
+resource_name = "indicator_right_to_left"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Indicator_Switch_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.261799), Vector3(0, 0, 0.261799)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ci31"]
+_data = {
+"high_beam_off_to_on": SubResource("Animation_tdqyp"),
+"high_beam_on_to_off": SubResource("Animation_qlgkr"),
+"indicator_left_to_off": SubResource("Animation_tu6yy"),
+"indicator_left_to_right": SubResource("Animation_qd8sa"),
+"indicator_off_to_left": SubResource("Animation_cbnws"),
+"indicator_off_to_right": SubResource("Animation_nhwq5"),
+"indicator_right_to_left": SubResource("Animation_gxnea"),
+"indicator_right_to_off": SubResource("Animation_quxaw"),
+"light_main_to_off": SubResource("Animation_d0q42"),
+"light_off_to_park": SubResource("Animation_38uru"),
+"light_park_to_main": SubResource("Animation_y6pd3")
+}
 
 [sub_resource type="Animation" id="Animation_ljpu4"]
 resource_name = "wiper_continuous_mode"
@@ -148,6 +339,79 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_8vr87"]
+resource_name = "wiper_rapid_to_off_mode"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459022, -1.54262, -0.054943)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [2],
+"method": &"set_wiper_move_state"
+}, {
+"args": [3],
+"method": &"set_wiper_move_state"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [4],
+"method": &"set_wiper_mode"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"wiper_rapid_to_off_finished"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_u2wsc"]
 resource_name = "wipers_towards_max"
 length = 3.8
@@ -222,79 +486,6 @@ tracks/4/keys = {
 "values": [{
 "args": [],
 "method": &"wiper_entererd_restart_delay_state"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_8vr87"]
-resource_name = "wiper_rapid_to_off_mode"
-length = 1.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("W_Wiper_L_Mesh:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.459023, -1.54262, -0.0549429), Vector3(-0.162949, -2.90048, 0.434335), Vector3(-0.459022, -1.54262, -0.054943)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("W_Wiper_R_Mesh:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.9, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.696604, -1.72533, 0.254847), Vector3(-0.153957, -2.7377, 0.721014), Vector3(-0.696604, -1.72533, 0.254847)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [2],
-"method": &"set_wiper_move_state"
-}, {
-"args": [3],
-"method": &"set_wiper_move_state"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [4],
-"method": &"set_wiper_mode"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1.8),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"wiper_rapid_to_off_finished"
 }]
 }
 
@@ -402,30 +593,29 @@ skeleton = NodePath("")
 [node name="Indicator_Switch" type="Node3D" parent="Car_Body"]
 transform = Transform3D(0.396086, 0.191475, -0.898027, -0.435231, 0.900319, 0, 0.808511, 0.390849, 0.439939, 0.457306, 1.01354, -0.442383)
 script = ExtResource("9_gwppc")
-indicator_switch_mesh_node = NodePath("Indicator_Switch_Mesh")
-light_switch_mesh_node = NodePath("Indicator_Switch_Mesh/Light_Switch_Mesh")
-vehicle_lights_node = NodePath("../../Vehicle_4W_Lights")
 audio_stream_player_node = NodePath("AudioStreamPlayer3D")
-turn_signal_rotation_axis = 2
-high_beam_rotation_axis = 1
-high_beam_subtract_rotation = true
-light_switch_angle_delta = 20.0
-light_switch_subtract_rotation = true
+anim_player_node = NodePath("AnimationPlayer")
 
 [node name="Indicator_Switch_Mesh" type="MeshInstance3D" parent="Car_Body/Indicator_Switch"]
 mesh = ExtResource("7_fh5ou")
 skeleton = NodePath("")
 
 [node name="Light_Switch_Mesh" type="MeshInstance3D" parent="Car_Body/Indicator_Switch/Indicator_Switch_Mesh"]
-transform = Transform3D(0.998829, -0.00590084, -0.0480281, 0.0300849, 0.853116, 0.520853, 0.0379001, -0.521688, 0.852294, -0.102289, -0.00181532, -0.00320709)
+transform = Transform3D(0.999781, 0.0209258, 0.00136384, -0.000852671, -0.0244173, 0.999701, 0.0209528, -0.999483, -0.0243941, -0.102289, -0.00181532, -0.00320709)
 mesh = ExtResource("8_52pxg")
 skeleton = NodePath("")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Car_Body/Indicator_Switch"]
 transform = Transform3D(1, 2.98023e-08, -2.98023e-08, 2.98023e-08, 1, -1.49012e-08, 0, 2.98023e-08, 1, -0.09, 0, 0)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Car_Body/Indicator_Switch"]
+libraries = {
+"": SubResource("AnimationLibrary_5ci31")
+}
+
 [node name="Steering_Wheel" type="Node3D" parent="Car_Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31013, 1.06112, -0.35556)
+transform = Transform3D(0.898794, 0.438371, 0, -0.438371, 0.898794, 0, 0, 0, 1, 0.31013, 1.06112, -0.35556)
+visible = false
 
 [node name="Steering_Wheel_Mesh" type="MeshInstance3D" parent="Car_Body/Steering_Wheel"]
 mesh = ExtResource("15_xj5aa")
@@ -436,7 +626,7 @@ script = ExtResource("13_70hku")
 anim_player_node = NodePath("AnimationPlayer")
 
 [node name="W_Wiper_L_Mesh" type="MeshInstance3D" parent="Car_Body/Windshield_Wipers"]
-transform = Transform3D(0.00380837, 0.443774, -0.89613, -0.0492309, 0.895133, 0.443071, 0.99878, 0.0424299, 0.0252564, 1.14272, 1.06474, -0.63711)
+transform = Transform3D(0.00380836, 0.443775, -0.896129, -0.0492307, 0.895132, 0.443072, 0.99878, 0.0424297, 0.0252564, 1.14272, 1.06474, -0.63711)
 mesh = ExtResource("10_7oh25")
 skeleton = NodePath("")
 

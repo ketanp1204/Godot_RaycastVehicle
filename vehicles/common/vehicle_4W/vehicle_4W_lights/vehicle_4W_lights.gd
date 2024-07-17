@@ -1,6 +1,4 @@
 extends Node3D
-signal light_mode_changed(mode: GlobalEnums.LIGHT_MODES)
-signal high_beam_changed(high_beam: bool)
 
 @export_category("References")
 @export var lowbeam_l_node: NodePath
@@ -41,30 +39,30 @@ func toggle() -> void:
 		headlight_material.emission_energy_multiplier = 1
 		visible = false
 		light_mode = GlobalEnums.LIGHT_MODES.PARK
-		light_mode_changed.emit(light_mode)
+		SignalManager.vehicle_light_mode_changed.emit(light_mode)
 	elif light_mode == GlobalEnums.LIGHT_MODES.PARK:
 		headlight_material.emission_enabled = true
 		headlight_material.emission_energy_multiplier = 10
 		visible = true
 		light_mode = GlobalEnums.LIGHT_MODES.MAIN
-		light_mode_changed.emit(light_mode)
+		SignalManager.vehicle_light_mode_changed.emit(light_mode)
 	elif light_mode == GlobalEnums.LIGHT_MODES.MAIN:
 		headlight_material.emission_enabled = false
 		headlight_material.emission_energy_multiplier = 1
 		visible = false
 		light_mode = GlobalEnums.LIGHT_MODES.OFF
-		light_mode_changed.emit(light_mode)
+		SignalManager.vehicle_light_mode_changed.emit(light_mode)
 
 
 func high_beam_toggle() -> void:
 	if highbeam_l.visible:
 		highbeam_l.visible = false
 		highbeam_r.visible = false
-		high_beam_changed.emit(false)
+		SignalManager.high_beam_changed.emit(false)
 	else:
 		highbeam_l.visible = true
 		highbeam_r.visible = true
-		high_beam_changed.emit(true)
+		SignalManager.high_beam_changed.emit(true)
 
 
 func _input(event):

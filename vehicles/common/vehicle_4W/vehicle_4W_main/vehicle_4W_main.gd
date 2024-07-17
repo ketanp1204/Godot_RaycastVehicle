@@ -146,6 +146,7 @@ func _process(delta):
 	
 	# Apply steering to steering wheel
 	var steering_wheel_rotation = steer_angle_normalized * max_steering_wheel_angle
+	#steering_wheel.rotate_object_local(Vector3.RIGHT, steering_wheel_rotation)
 	steering_wheel.rotation_degrees.x = -steering_wheel_rotation
 	# z rotation disabled since it doesn't work TODO: Fix this
 	#steering_wheel.rotation_degrees.z = -26.0

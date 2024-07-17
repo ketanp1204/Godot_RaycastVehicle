@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cl5rmt1ag4b7n"]
+[gd_scene load_steps=14 format=3 uid="uid://cl5rmt1ag4b7n"]
 
 [ext_resource type="Texture2D" uid="uid://dbca2hyap8kge" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_COL_2K.jpg" id="1_4cxxe"]
 [ext_resource type="Texture2D" uid="uid://b04fyujtm0lqp" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_AO_2K.jpg" id="2_au1l1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://6rba86f3cb4v" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_NRM_2K.jpg" id="5_upsnx"]
 [ext_resource type="Texture2D" uid="uid://dayx1unrgj6x4" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_GLOSS_2K.jpg" id="6_flhil"]
 [ext_resource type="ArrayMesh" uid="uid://brekj3dc8pmvb" path="res://assets/vehicles/suzuki_sx4_sportback/meshes/suzuki_sx4_sportback_Bonnet_Mesh.res" id="7_2osqt"]
+[ext_resource type="Script" path="res://levels/feature_test/feature_test.gd" id="8_hib3s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rrmpo"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -41,6 +42,7 @@ uv1_scale = Vector3(50, 50, 1)
 size = Vector2(50, 50)
 
 [node name="FeatureTestScene" type="Node3D"]
+script = ExtResource("8_hib3s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_10vr7")
@@ -59,4 +61,4 @@ visible = false
 mesh = ExtResource("7_2osqt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.846677, 0.165735, -0.505638, 0, 0.950256, 0.311469, 0.532107, 0.263714, -0.80456, -0.88009, 1.21458, -2.14083)
+transform = Transform3D(0.965253, -0.0942765, 0.243717, 0, 0.932652, 0.360776, -0.261316, -0.348241, 0.900246, 0.491189, 1.12072, -0.326766)

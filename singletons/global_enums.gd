@@ -14,17 +14,22 @@ enum CAMERAS {
 
 
 ########## INDICATORS ##########
-enum INDICATOR_MODE { 
+enum INDICATOR_MODES { 
 	OFF, 
 	LEFT, 
 	RIGHT }
 
 
-########## LIGHTS ##########
+########## VEHICLE LIGHTS ##########
 enum LIGHT_MODES { 
 	OFF, 
 	PARK, 
 	MAIN }
+
+enum HIGH_BEAM_MODES { 
+	OFF,
+	ON
+}
 
 
 ########## WIPERS ##########
