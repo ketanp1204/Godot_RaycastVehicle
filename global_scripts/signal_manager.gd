@@ -1,5 +1,9 @@
 extends Node
 
+########## ENGINE ##########
+signal engine_state_changed(state: GlobalEnums.ENGINE_STATES)
+
+
 ########## VEHICLE LIGHTS ##########
 signal vehicle_light_mode_changed(mode: GlobalEnums.LIGHT_MODES)
 

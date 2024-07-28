@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx53dluy47tla"]
+
+[ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_gearbox/vehicle_4W_gearbox.gd" id="1_qmg7s"]
+
+[node name="Gearbox" type="Node"]
+script = ExtResource("1_qmg7s")

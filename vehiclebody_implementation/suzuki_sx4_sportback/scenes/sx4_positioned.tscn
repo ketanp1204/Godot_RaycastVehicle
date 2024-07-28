@@ -1,0 +1,147 @@
+[gd_scene load_steps=18 format=3 uid="uid://ck4414c2pcial"]
+
+[ext_resource type="ArrayMesh" uid="uid://c1hm3h3j5uyq2" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Wheel_L_Mesh_001.res" id="1_ybmx4"]
+[ext_resource type="ArrayMesh" uid="uid://dcm4r8mpeipse" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Car_Body_001.res" id="2_kvlq1"]
+[ext_resource type="ArrayMesh" uid="uid://bdjn80jl44yka" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Bonnet_Mesh_001.res" id="3_k8y2d"]
+[ext_resource type="ArrayMesh" uid="uid://ksgwxof5xy7u" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Boot_Mesh_001.res" id="4_kq7ib"]
+[ext_resource type="ArrayMesh" uid="uid://ttjik0sulq7s" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Gear_Stick_Mesh_001.res" id="5_8uwfc"]
+[ext_resource type="ArrayMesh" uid="uid://d1xrrrmevqasd" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Ignition_Key_Mesh_001.res" id="6_fxaco"]
+[ext_resource type="ArrayMesh" uid="uid://s1xsmvvr18rr" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Indicator_Switch_Mesh_001.res" id="7_jvpas"]
+[ext_resource type="ArrayMesh" uid="uid://sdukhtrrdc00" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Light_Switch_Mesh_001.res" id="8_2oalw"]
+[ext_resource type="ArrayMesh" uid="uid://ckvum1oaoecsn" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Steering_Wheel_Mesh_001.res" id="9_xy3xh"]
+[ext_resource type="ArrayMesh" uid="uid://bjh52vpt5xsuf" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_W_Wiper_L_Mesh_001.res" id="10_xu6ms"]
+[ext_resource type="ArrayMesh" uid="uid://un4c14d0mikh" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_W_Wiper_R_Mesh_001.res" id="11_k2lqw"]
+[ext_resource type="ArrayMesh" uid="uid://brs3p0vtv58gt" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Wiper_Switch_Mesh_001.res" id="12_n42ma"]
+[ext_resource type="ArrayMesh" uid="uid://fccxpxs1brcp" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Door_FL_Mesh_001.res" id="13_uua5u"]
+[ext_resource type="ArrayMesh" uid="uid://dk4ufg8s70s2o" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Door_FR_Mesh_001.res" id="14_jdt7f"]
+[ext_resource type="ArrayMesh" uid="uid://dj4cpx3p2e3xu" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Door_RL_Mesh_001.res" id="15_hpv5y"]
+[ext_resource type="ArrayMesh" uid="uid://dve5gfp7kk78g" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Door_RR_Mesh_001.res" id="16_pghgj"]
+[ext_resource type="ArrayMesh" uid="uid://dg38ab0x5bnl6" path="res://vehiclebody_implementation/suzuki_sx4_sportback/import/meshes/suzuki_sx4_sportback_-yforward_Wheel_R_Mesh_001.res" id="17_noiu4"]
+
+[node name="Suzuki_SX4_Sportback" type="Node3D"]
+
+[node name="Car_Body" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_kvlq1")
+skeleton = NodePath("")
+
+[node name="Bonnet" type="Node3D" parent="Car_Body"]
+
+[node name="Bonnet_Mesh" type="MeshInstance3D" parent="Car_Body/Bonnet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08313, 1.07191)
+mesh = ExtResource("3_k8y2d")
+skeleton = NodePath("")
+
+[node name="Boot" type="Node3D" parent="Car_Body"]
+
+[node name="Boot_Mesh" type="MeshInstance3D" parent="Car_Body/Boot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65386, -1.49868)
+mesh = ExtResource("4_kq7ib")
+skeleton = NodePath("")
+
+[node name="Gear_Stick" type="Node3D" parent="Car_Body"]
+
+[node name="Gear_Stick_Mesh" type="MeshInstance3D" parent="Car_Body/Gear_Stick"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61381, 0.248429)
+mesh = ExtResource("5_8uwfc")
+skeleton = NodePath("")
+
+[node name="Ignition_Key" type="Node3D" parent="Car_Body"]
+
+[node name="Ignition_Key_Mesh" type="MeshInstance3D" parent="Car_Body/Ignition_Key"]
+transform = Transform3D(-0.250171, 0.274287, -0.928537, 0.562219, 0.821931, 0.0913202, 0.788242, -0.499195, -0.359833, 0.251374, 0.948068, 0.477677)
+mesh = ExtResource("6_fxaco")
+skeleton = NodePath("")
+
+[node name="Indicator_Switch" type="Node3D" parent="Car_Body"]
+
+[node name="Indicator_Switch_Mesh" type="MeshInstance3D" parent="Car_Body/Indicator_Switch"]
+transform = Transform3D(-0.811839, -0.384237, -0.439635, -0.427796, 0.903875, -2.98023e-08, 0.397375, 0.188074, -0.898176, 0.442383, 1.01354, 0.457306)
+mesh = ExtResource("7_jvpas")
+skeleton = NodePath("")
+
+[node name="Light_Switch_Mesh" type="MeshInstance3D" parent="Car_Body/Indicator_Switch/Indicator_Switch_Mesh"]
+transform = Transform3D(0.998829, -0.00590085, -0.0480281, 0.0300849, 0.853116, 0.520853, 0.0379, -0.521688, 0.852294, -0.102289, -0.00181535, -0.00320705)
+mesh = ExtResource("8_2oalw")
+skeleton = NodePath("")
+
+[node name="Steering_Wheel" type="Node3D" parent="Car_Body"]
+
+[node name="Steering_Wheel_Mesh" type="MeshInstance3D" parent="Car_Body/Steering_Wheel"]
+transform = Transform3D(1, 0, 0, 0, 0.898702, -0.438559, 0, 0.438559, 0.898702, 0.35556, 1.06112, 0.31013)
+mesh = ExtResource("9_xy3xh")
+skeleton = NodePath("")
+
+[node name="Windshield_Wipers" type="Node3D" parent="Car_Body"]
+
+[node name="W_Wiper_L_Mesh" type="MeshInstance3D" parent="Car_Body/Windshield_Wipers"]
+transform = Transform3D(-0.99878, -0.042428, -0.0252599, -0.0492307, 0.895133, 0.443072, 0.00381236, 0.443775, -0.89613, 0.63711, 1.06474, 1.14272)
+mesh = ExtResource("10_xu6ms")
+skeleton = NodePath("")
+
+[node name="W_Wiper_R_Mesh" type="MeshInstance3D" parent="Car_Body/Windshield_Wipers"]
+transform = Transform3D(-0.981067, 0.153522, 0.118063, 0.193365, 0.742252, 0.641617, 0.0108701, 0.652298, -0.757885, 0.266407, 1.08408, 1.19971)
+mesh = ExtResource("11_k2lqw")
+skeleton = NodePath("")
+
+[node name="Wiper_Switch" type="Node3D" parent="Car_Body"]
+
+[node name="Wiper_Switch_Mesh" type="MeshInstance3D" parent="Car_Body/Wiper_Switch"]
+transform = Transform3D(-0.432443, 0.213168, -0.876101, -0.0615001, 0.962416, 0.264526, 0.899562, 0.168273, -0.40308, 0.265625, 1.01354, 0.457367)
+mesh = ExtResource("12_n42ma")
+skeleton = NodePath("")
+
+[node name="Door_FL" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89, 0.816, 0.773)
+
+[node name="Door_FL_Mesh" type="MeshInstance3D" parent="Door_FL"]
+mesh = ExtResource("13_uua5u")
+skeleton = NodePath("")
+
+[node name="Door_FR" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89, 0.816, 0.773)
+
+[node name="Door_FR_Mesh" type="MeshInstance3D" parent="Door_FR"]
+mesh = ExtResource("14_jdt7f")
+skeleton = NodePath("")
+
+[node name="Door_RL" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.913, 0.853, -0.307)
+
+[node name="Door_RL_Mesh" type="MeshInstance3D" parent="Door_RL"]
+mesh = ExtResource("15_hpv5y")
+skeleton = NodePath("")
+
+[node name="Door_RR" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.913, 0.853, -0.307)
+
+[node name="Door_RR_Mesh" type="MeshInstance3D" parent="Door_RR"]
+mesh = ExtResource("16_pghgj")
+skeleton = NodePath("")
+
+[node name="Wheel_FL" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81, 0.362, 1.264)
+
+[node name="Wheel_FL_Mesh" type="MeshInstance3D" parent="Wheel_FL"]
+mesh = ExtResource("1_ybmx4")
+skeleton = NodePath("")
+
+[node name="Wheel_FR" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81, 0.362, 1.264)
+
+[node name="Wheel_FR_Mesh" type="MeshInstance3D" parent="Wheel_FR"]
+mesh = ExtResource("17_noiu4")
+skeleton = NodePath("")
+
+[node name="Wheel_RL" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81, 0.362, -1.424)
+
+[node name="Wheel_RL_Mesh" type="MeshInstance3D" parent="Wheel_RL"]
+mesh = ExtResource("1_ybmx4")
+skeleton = NodePath("")
+
+[node name="Wheel_RR" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81, 0.362, -1.424)
+
+[node name="Wheel_RR_Mesh" type="MeshInstance3D" parent="Wheel_RR"]
+mesh = ExtResource("17_noiu4")
+skeleton = NodePath("")

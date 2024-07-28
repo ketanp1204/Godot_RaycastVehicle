@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhaby3m56wd3l"]
+
+[ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_engine/vehicle_4W_engine.gd" id="1_r45fv"]
+
+[sub_resource type="Curve" id="Curve_r2brj"]
+min_value = -2.23517e-10
+max_value = 400.0
+_data = [Vector2(0, 0), 0.0, 1697.08, 0, 0, Vector2(0.142, 252), 968.464, 968.464, 0, 0, Vector2(0.5, 400), 0.0, 0.0, 0, 0, Vector2(1, 0), -1523.95, 0.0, 0, 0]
+point_count = 4
+
+[node name="Engine" type="Node"]
+script = ExtResource("1_r45fv")
+torque_curve = SubResource("Curve_r2brj")

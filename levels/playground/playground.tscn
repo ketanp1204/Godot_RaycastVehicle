@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://n5as80wr3fph"]
+[gd_scene load_steps=18 format=3 uid="uid://n5as80wr3fph"]
 
 [ext_resource type="Texture2D" uid="uid://dbca2hyap8kge" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_COL_2K.jpg" id="1_gpmwc"]
 [ext_resource type="Texture2D" uid="uid://b04fyujtm0lqp" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_AO_2K.jpg" id="2_b0x4r"]
@@ -7,19 +7,30 @@
 [ext_resource type="Texture2D" uid="uid://6rba86f3cb4v" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_NRM_2K.jpg" id="5_4kuox"]
 [ext_resource type="Texture2D" uid="uid://dayx1unrgj6x4" path="res://assets/textures/CityStreetAsphaltGenericClean_001/CityStreetAsphaltGenericClean001_GLOSS_2K.jpg" id="6_rdfim"]
 [ext_resource type="Material" uid="uid://b5l86vtwlh4a7" path="res://assets/materials/concrete_mat.tres" id="7_q4euk"]
-[ext_resource type="PackedScene" uid="uid://bx0ttm8puvpw4" path="res://vehicles/suzuki_sx4_sportback/sx4_sportback_main.tscn" id="8_432nu"]
+[ext_resource type="PackedScene" uid="uid://bx0ttm8puvpw4" path="res://vehicles/suzuki_sx4_sportback/sx4_sportback_main.tscn" id="8_ayiv3"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv6o5"]
-sky_top_color = Color(0.38928, 0.448142, 0.573553, 1)
-sky_horizon_color = Color(0.362592, 0.751241, 0.469408, 1)
-sky_curve = 0.109807
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_jcult"]
+energy_multiplier = 3.0
 
-[sub_resource type="Sky" id="Sky_hkqfb"]
-sky_material = SubResource("ProceduralSkyMaterial_gv6o5")
+[sub_resource type="Sky" id="Sky_q3g6g"]
+sky_material = SubResource("PhysicalSkyMaterial_jcult")
 
-[sub_resource type="Environment" id="Environment_07rp5"]
+[sub_resource type="Environment" id="Environment_0hiqk"]
 background_mode = 2
-sky = SubResource("Sky_hkqfb")
+sky = SubResource("Sky_q3g6g")
+tonemap_mode = 3
+tonemap_white = 6.0
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.08
+glow_blend_mode = 1
+glow_hdr_threshold = 2.0
+fog_enabled = true
+fog_sun_scatter = 0.23
+fog_density = 0.003
+fog_aerial_perspective = 1.0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7w6j0"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rrqrx"]
 size = Vector2(10000, 10000)
@@ -50,14 +61,22 @@ data = PackedVector3Array(15, 0, 15, -15, 0, 15, 15, 0, -15, -15, 0, 15, -15, 0,
 
 [node name="Playground" type="Node3D"]
 
-[node name="Environment" type="Node" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0hiqk")
+camera_attributes = SubResource("CameraAttributesPractical_7w6j0")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(-0.866025, -0.0825238, 0.493143, 0, 0.986286, 0.165048, -0.5, 0.142935, -0.854148, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.51918, 0.140594, 0.843022, 0.693144, 0.646324, 0.319087, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_temperature = 2200.0
+light_energy = 5.0
 shadow_enabled = true
+directional_shadow_split_1 = 0.04
+directional_shadow_split_2 = 0.11
+directional_shadow_split_3 = 0.33
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 200.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
-environment = SubResource("Environment_07rp5")
+[node name="Environment" type="Node" parent="."]
 
 [node name="AsphaltGround" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_rrqrx")
@@ -78,5 +97,5 @@ surface_material_override/0 = ExtResource("7_q4euk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_v0b23")
 
-[node name="Suzuki_SX4_Sportback" parent="." instance=ExtResource("8_432nu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.990344, -9.99333)
+[node name="Suzuki_SX4_Sportback" parent="." instance=ExtResource("8_ayiv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75488, -7.06647)

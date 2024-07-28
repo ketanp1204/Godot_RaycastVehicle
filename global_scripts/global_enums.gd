@@ -7,6 +7,14 @@ enum ROTATION_AXIS {
 	Z}
 
 
+########## ENGINE ##########
+enum ENGINE_STATES {
+	OFF,
+	ELECTRICITY,
+	RUNNING
+}
+
+
 ########## CAMERA ##########
 enum CAMERAS { 
 	INTERNAL, 

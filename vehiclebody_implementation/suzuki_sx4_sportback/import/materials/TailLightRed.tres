@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bw5rkqeqiu34j"]
+
+[resource]
+resource_name = "TailLightRed"
+cull_mode = 2
+albedo_color = Color(0.682351, 0.615687, 0, 1)
+metallic = 0.771654
+roughness = 0.192913

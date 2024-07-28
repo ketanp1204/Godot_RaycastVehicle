@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjtmbvt500n7o"]
+
+[ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_differential/vehicle_4W_differential.gd" id="1_ow1mn"]
+
+[node name="Differential" type="Node"]
+script = ExtResource("1_ow1mn")

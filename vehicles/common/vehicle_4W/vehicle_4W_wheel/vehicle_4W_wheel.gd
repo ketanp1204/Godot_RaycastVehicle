@@ -1,3 +1,4 @@
+class_name Vehicle_4W_Wheel
 extends Node3D
 
 ########## COMPONENTS ##########
@@ -57,15 +58,6 @@ var slip_angle_peak: float = 8.0
 var slip_angle_dynamic: float = 0.0
 
 
-########## INPUT ##########
-
-var throttle_input: float = 0.0
-var drive_torque: float = 0.0
-
-
-
-
-
 
 func _ready():
 	
@@ -89,15 +81,6 @@ func _ready():
 func _process(_delta):
 	
 	show_raycast_lines()
-	
-	if Input.is_action_pressed("Throttle"):
-		throttle_input = 1.0
-	if Input.is_action_pressed("Reverse"):
-		throttle_input = -1.0
-	if Input.is_action_just_released("Throttle") or Input.is_action_just_released("Reverse"):
-		throttle_input = 0.0
-	
-	drive_torque = throttle_input * 100
 
 
 func show_raycast_lines():
@@ -110,7 +93,7 @@ func show_raycast_lines():
 		)
 
 
-func _physics_process(delta):
+func update_physics(delta: float, drive_torque: float) -> void:
 	# Update raycast target position
 	var target = raycast.to_local(global_transform.origin + (-global_transform.basis.y * (rest_length + wheel_radius)))
 	raycast.target_position = target
@@ -169,7 +152,7 @@ func _physics_process(delta):
 		var low_speed_steady_state_slip_angle = slip_angle_peak * sign(-local_linear_velocity.z)
 		# HighSpeedSteadyStateSlipAngle = SlipAngle
 		# Range of LocalLinearVelocity value mapped to 0-1
-		var velocity_range = remap_clamped(local_linear_velocity.length(), 3.0, 6.0, 0.0, 1.0)
+		var velocity_range = MathUtils.map_range_clamped(local_linear_velocity.length(), 3.0, 6.0, 0.0, 1.0)	
 		# SlipAngle = Lerp(LowSpeedSA, HighSpeedSA, Range of LocalLinearVelocity values mapped to 0-1
 		var steady_state_slip_angle = lerpf(low_speed_steady_state_slip_angle, 
 											slip_angle, 
@@ -203,17 +186,6 @@ func _physics_process(delta):
 		last_length = rest_length
 		susp_force = 0.0
 		susp_force_vector = Vector3.ZERO
-
-
-func remap_clamped(val: float, in1: float, in2: float, out1: float, out2: float) -> float:
-	var result = out1 + (val - in1) * (out2 - out1) / (in2 - in1)
-	
-	if result < out1: 
-		result = out1
-	if result > out2:
-		result = out2
-	
-	return result
 
 
 func get_point_velocity(point: Vector3) -> Vector3:

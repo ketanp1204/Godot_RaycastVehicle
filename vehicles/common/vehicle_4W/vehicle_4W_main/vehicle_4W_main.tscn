@@ -1,26 +1,48 @@
-[gd_scene load_steps=8 format=3 uid="uid://g7utfqk4oid0"]
+[gd_scene load_steps=12 format=3 uid="uid://g7utfqk4oid0"]
 
 [ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_main/vehicle_4W_main.gd" id="1_dta1s"]
 [ext_resource type="PackedScene" uid="uid://opcu0aq33k03" path="res://vehicles/common/vehicle_4W/vehicle_4W_door/vehicle_4W_door.tscn" id="2_ov5af"]
 [ext_resource type="Script" path="res://vehicles/common/vehicle_4W/vehicle_4W_interactable/vehicle_4W_interactable.gd" id="3_klncu"]
+[ext_resource type="PackedScene" uid="uid://dx53dluy47tla" path="res://vehicles/common/vehicle_4W/vehicle_4W_gearbox/vehicle_4W_gearbox.tscn" id="3_pv6fw"]
+[ext_resource type="PackedScene" uid="uid://cjtmbvt500n7o" path="res://vehicles/common/vehicle_4W/vehicle_4W_differential/vehicle_4W_differential.tscn" id="4_ja6ud"]
 [ext_resource type="PackedScene" uid="uid://cwhrwf2tqh136" path="res://vehicles/common/mouse_handle/mouse_handle.tscn" id="5_0s1sa"]
+[ext_resource type="PackedScene" uid="uid://dcq3jmqs5wqo3" path="res://vehicles/common/vehicle_4W/vehicle_4W_clutch/vehicle_4W_clutch.tscn" id="5_07u8t"]
 [ext_resource type="PackedScene" uid="uid://br53hfa2kgmu0" path="res://vehicles/common/vehicle_4W/vehicle_4W_lights/vehicle_4W_lights.tscn" id="6_frbf1"]
+[ext_resource type="PackedScene" uid="uid://dhaby3m56wd3l" path="res://vehicles/common/vehicle_4W/vehicle_4W_engine/vehicle_4W_engine.tscn" id="8_sdaua"]
 [ext_resource type="PackedScene" uid="uid://dn8qkj47uussj" path="res://vehicles/common/vehicle_4W/vehicle_4W_wheel/vehicle_4W_wheel.tscn" id="9_hf0ks"]
 [ext_resource type="PackedScene" uid="uid://cx5tiyarhaal4" path="res://vehicles/common/cameras/vehicle_cameras.tscn" id="15_kjjsr"]
 
 [node name="Vehicle_4W_Main" type="RigidBody3D"]
 script = ExtResource("1_dta1s")
 car_body_node = NodePath("Car_Body")
+door_fl_node = NodePath("Door_FL")
+door_fr_node = NodePath("Door_FR")
+door_rl_node = NodePath("Door_RL")
+door_rr_node = NodePath("Door_RR")
 wheel_fl_node = NodePath("Wheel_FL")
 wheel_fr_node = NodePath("Wheel_FR")
 wheel_rl_node = NodePath("Wheel_RL")
 wheel_rr_node = NodePath("Wheel_RR")
 steering_wheel_mesh_node = NodePath("Steering_Wheel")
 lights_node = NodePath("Vehicle_4W_Lights")
+cameras_node = NodePath("Vehicle_Cameras")
+info_node = NodePath("Panel/Info")
+engine_node = NodePath("Engine")
+gearbox_node = NodePath("Gearbox")
+differential_node = NodePath("Differential")
+clutch_node = NodePath("Clutch")
 
 [node name="Car_Body" type="MeshInstance3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="Engine" parent="." instance=ExtResource("8_sdaua")]
+
+[node name="Gearbox" parent="." instance=ExtResource("3_pv6fw")]
+
+[node name="Differential" parent="." instance=ExtResource("4_ja6ud")]
+
+[node name="Clutch" parent="." instance=ExtResource("5_07u8t")]
 
 [node name="Door_FL" parent="." instance=ExtResource("2_ov5af")]
 
@@ -31,8 +53,10 @@ lights_node = NodePath("Vehicle_4W_Lights")
 [node name="Door_RR" parent="." instance=ExtResource("2_ov5af")]
 
 [node name="Wheel_FL" parent="." instance=ExtResource("9_hf0ks")]
+use_as_steering = true
 
 [node name="Wheel_FR" parent="." instance=ExtResource("9_hf0ks")]
+use_as_steering = true
 
 [node name="Wheel_RL" parent="." instance=ExtResource("9_hf0ks")]
 
@@ -65,3 +89,17 @@ external_handle_node = NodePath("Handle")
 [node name="Vehicle_4W_Lights" parent="." instance=ExtResource("6_frbf1")]
 
 [node name="CentreOfMassVisual" type="Marker3D" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 294.0
+offset_bottom = 265.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Info" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
